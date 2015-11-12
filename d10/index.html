@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>第十届M游戏制作大赛</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src='http://rm.66rpg.com/source/plugin/sq_recent_smiles/js/jquery-1.11.0.min.js'></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <style type="text/css">
+    body,html{
+      background-color: #334;
+      font-family: sans-serif;
+      margin:0px;
+      height:100%;
+      width: 100%;
+      font-size: 1.1em;
+      cursor: default;
+    }
+    #viewport{
+      width: 100%;
+      max-width: 1024px;
+      margin: auto;
+    }
+    #title{
+      background-color: #333;
+      height: 4.5em;
+      box-shadow: 0px 3px 5px #222;
+      position: relative;
+      overflow: hidden;
+    }
+    h1{
+      position: absolute;
+      font-size: 1.5em;
+      font-weight: bolder;
+      color: white;
+      margin: 0.5em 1em 0em 1em;
+    }
+    #link_area_table1{
+      display:table;
+      height:100%;
+      width:97%;
+      margin-top: -0.5em;
+    }
+    #link_area_table2{
+      display:table-row;
+    }
+    #link_area{
+      display:table-cell;
+      vertical-align:bottom;
+      font-size: 0.8em;
+      text-align: right;
+    }
+    #link_area a{
+      height: 100%;
+      color: white;
+      margin-left: 2em;
+    }
+    #link_area a:hover{
+      text-shadow: 0px 0px 10px #88C;
+    }
+    .content{
+      background-color: white;
+      height: 11em;
+      border-radius:0.5em;
+      margin: 2em 2em 2em 2em;
+      overflow:hidden;
+      background-repeat:no-repeat;
+      background-position:center top;
+      background-color: #111;
+      cursor: pointer;
+      box-shadow: 0px 3px 5px #222;
+      position: relative;
+    }
+    #d10{
+      background-image: url("d10.jpg");
+    }
+    #d9{
+      background-image: url("d9.jpg");
+    }
+    h2{
+      margin-right: 0.3em;
+      color: #eee;
+      text-align: right;
+      font-size: 2em;
+      font-family: "微软雅黑","黑体","sans-serif";
+      text-transform:uppercase;
+      text-shadow: 0px 0px 10px #000;
+      letter-spacing:1px;
+      position: relative;
+    }
+    span.yellow{
+      color: #EE9;
+    }
+    span.small{
+      font-size: 0.8em;
+      letter-spacing:0px;
+    }
+    .info{
+      margin-top: 1em;
+      width: 100%;
+      right: -100%;
+      font-size: 0.9em;
+      text-align: right;
+      color: #DDD;
+      text-shadow: 0px 0px 10px #aaa;
+      line-height: 2em;
+      position: relative;
+    }
+    .black_mask{
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      position: absolute;
+      top:0;
+    }
+    #footer{
+      font-size: 0.8em;
+      text-align:center;
+      color: #667;
+      margin-top: 3em;
+    }
+    #footer p{
+      margin-top: 2em;
+      padding-bottom: 2em;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('.black_mask').css('opacity','0.0')
+      $('.content').click( function(){ window.top.location= $(this).attr('href') })
+      $('.content').mouseenter( function(){
+        $(this).children('.black_mask').animate({opacity:'0.5'},0)
+        $(this).children('.info').animate({right:'1.5em'},300)
+      })
+      $('.content').mouseleave( function(){
+        $(this).children('.black_mask').animate({opacity:'0.0'},0)
+        $(this).children('.info').animate({right:'-100%'},300)
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="title">
+    <h1>第十届M游戏制作大赛</h1>
+    <div id="link_area_table1"><div id="link_area_table2"><div id="link_area">
+      <a href="#">比赛规则</a>
+      <a href="#">比赛流程</a>
+      <a href="#">优胜奖品</a>
+      <a href="#">参赛作品</a>
+      <a href="#">Q&A</a>
+    </div></div></div>
+  </div>
+  <div id="viewport">
+    <div class="content" id="d10" href="http://rm.66rpg.com/portal.php?mod=index/">
+      <div class="black_mask"></div>
+      <div class="head"><h2><span class="small">NO.10 </span><span class="yellow">Mgame</span> production competition</h2></div>
+      <div class="info">
+        <p>第十届比赛，</p>
+        <p>时间10年，</p>
+        <p>感动却不止10次。</p>
+      </div>
+    </div>
+    <div class="content" id="d9" href="http://rm.66rpg.com/forum-561-1.html/">
+      <div class="black_mask"></div>
+      <div class="head"><h2><span class="small">NO.9 </span><span class="yellow">Mgame</span> production competition</h2></div>
+      <div class="info">
+        <p>回忆上一届，</p>
+        <p>9——是一个轮回的开始。</p>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div style="width:100%;height:1px;background-color:#113"></div>
+    <div style="width:100%;height:1px;background-color:#445"></div>
+    <p>Page Designed By Miaowm5(2015).</p>
+  </div>
+</body>
+</html>

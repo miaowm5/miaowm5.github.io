@@ -1,0 +1,14 @@
+#right_area h2{
+  font-size: 0.9em;
+  font-weight: normal;
+}
+#right_area .click{
+  background-color: brown;
+  color: white;
+  font-weight: bolder;
+  padding-left: 20px;
+  cursor: pointer;
+}
+#right_area .wait_click{
+  display: none;
+}

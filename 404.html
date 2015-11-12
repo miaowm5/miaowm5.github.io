@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <title>名字叫错误的地方</title>
+</head>
+<html>
+<body>
+  <div align="center">
+    <div id="error">
+      请注意，当你看到这段文字时表示你的浏览器不支持javascript<br>
+      继续访问这个网站将会出现不可预知的错误！<br><br><br>
+    </div>
+    <h1 id="title1" style="display:none">你来到了一个未知的地方<br></h1>
+    <h1 id="title2" style="display:none">这个页面已经搬家了<br></h1>
+    <hr>
+    <div id="hint1" style="display:none">
+      <p>少年，你貌似前往了一个奇怪而又无效的地址呢。</p>
+      <p>还不快点击 <a href="javascript:history.go(-1)">后退</a> ，从哪里来回到哪里去？</p>
+    </div>
+    <div id="hint2" style="display:none">
+      <p>少年，不好意思这个页面已经搬家到其他地方了。</p>
+      <p>还不快点击 <a id="link" href="#">跳转</a> ，前往最新的网址？</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('error').style.display = "none"
+    var path_list = {
+      // "old_url" : "new_url",
+      "/rmproject.html" : "http://miaowm5.github.io/rmproject/generate.html",
+    }
+    var path = path_list[location.pathname]
+    if (path){
+      document.getElementById('title2').style.display = "inline"
+      document.getElementById('hint2').style.display = "inline"
+      document.getElementById('link').href = path
+    }
+    else{
+      document.getElementById('title1').style.display = "inline"
+      document.getElementById('hint1').style.display = "inline"
+    }
+  </script>
+</body>
+</html>

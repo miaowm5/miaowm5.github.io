@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo 寻找记忆的少女</title>
+  <meta name="title" content="memo寻找记忆的少女" />
+  <meta name="author" content="喵呜喵5，miaowm5@gmail.com" />
+  <meta name="subject" content="解谜游戏《memo寻找记忆的少女》" />
+  <meta name="description" content="略微游戏困难的剧情解谜游戏《memo寻找记忆的少女》的官方网站！提供包括游戏下载地址在内与游戏相关的说明与介绍。" />
+  <meta name="keywords" content="memo,寻找记忆的少女,喵呜喵5,解谜游戏,rpg制作大师,游戏,免费游戏,下载" />
+  <meta name="abstract" content="解谜游戏《memo寻找记忆的少女》官方网站" />
+  <meta name="abstract" content="mwm5(2015) all rights reserved" />
+  <meta name="designer" content="喵呜喵5" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script src="js_main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <style type="text/css">
+    .content_area{
+      height:50em;
+      line-height: 2;
+      font-size: 0.9em;
+    }
+    #right_area{
+      height:43em;
+    }
+    #right_area a{
+      color: black;
+    }
+    #right_area table{
+      width: 100%;
+      border:2px solid #222;
+      text-align: center;
+    }
+    #right_area td{
+      border:1px solid #555;
+    }
+    .title_left{
+      width:40%;
+    }
+    .title_left,.title_right{
+      background-color: brown;
+      color: white;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body onload="loadding()">
+
+  <!-- 错误信息 -->
+  <div id="loadding">
+    <p>
+      页面正在载入中，请思考一会人生<br>
+      如果本信息一直显示在这里可能是网络傲娇了或者浏览器不支持JavaScript。
+    </p>
+  </div>
+
+  <!-- 预加载资源 -->
+  <div class="pre_load" style="display:none">
+    <img src="img/logo.png"></img>
+    <img src="img/frame1.png"></img><img src="img/frame2.png"></img><img src="img/frame3.png"></img>
+    <img src="img/command.png"></img>
+    <img src="img/staff_command.png"></img>
+  </div>
+
+  <div id="load_over">
+
+  <!-- 页首 -->
+  <div id="head"></div>
+
+  <!-- 内容 -->
+  <div id="main_area">
+    <div id="left_area">
+      <div class='piclink' picfile="staff" npic="5" hpic="7" onclick="scroll_right(0)"></div>
+      <div class='piclink' picfile="staff" npic="9" hpic="8" onclick="scroll_right(1)"></div>
+      <div class='piclink' picfile="staff" npic="1" hpic="0" onclick="scroll_right(2)"></div>
+      <div class='piclink' picfile="staff" npic="2" hpic="4" onclick="scroll_right(3)"></div>
+      <div class='piclink' picfile="staff" npic="3" hpic="6" onclick="scroll_right(4)"></div>
+    </div>
+    <div id="right_area">
+      <div class="content_area">
+        <h1>图像素材</h1>
+        <table>
+          <tr><td class="title_left">使用素材</td><td class="title_right">作者</td></tr>
+          <tr><td><a href="http://frames-design.com/">Frame Design</td><td></td></tr>
+          <tr><td><a href="http://cocodoco.chu.jp/">ここどこ</td><td>神楽あき</td></tr>
+          <tr><td><a href="http://www.rpgmakervxace.net/topic/595-pack-of-tiles-2-includes-pack-1-25mb/">Pack of Tilesets</td><td>Soruve/Celianna/Wild Arms/Zanyzora/Hanzo Kimura/Enterbrain/Mack/Davias/Smithygcn/Inquisitor</td></tr>
+          <tr><td><a href="http://forums.rpgmakerweb.com/index.php?/topic/65-steampunk-tiles/">Steampunk Tiles</a></td><td>Celianna/Lunarea/Enterbrain</td></tr>
+          <tr><td><a href="http://www.blogger.com/profile/05707634691786390314">Lunarea's Blog</a></td><td>Lunarea</td></tr>
+          <tr><td><a href="http://www.tekepon.net/fsm/">First Seed Material (REFMAP)</a></td><td></td></tr>
+          <tr><td><a href="http://cocoon.daa.jp">COCOON</a></td><td>八色いんこ</td></tr>
+          <tr><td><a href="http://www.pixiv.net/member.php?id=1186333">pixiv：フリー素材 歯車</a></td><td>マカヤキ</td></tr>
+          <tr><td><a href="http://www.pixiv.net/member.php?id=3909765">pixiv：フリー素材 07</a></td><td>梅助</td></tr>
+          <tr><td><a href="http://www.vita-chi.net/sozai1.htm">びたちー素材館</a></td><td>ちぃ</td></tr>
+          <tr><td><a href="http://pixabay.com">Pixbay</a></td><td>utehohn/geralt/stux/Nemo</td></tr>
+          <tr><td><a href="http://kage-design.com/wp/">シルエットデザイン</a></td><td></td></tr>
+          <tr><td><a href="http://free-texture.net/">フリーテクスチャ素材館</a></td><td></td></tr>
+          <tr><td><a href="#">RPG Maker XP / VX Ace RTP</a></td><td>Enterbrain</td></tr>
+        </table>
+      </div>
+      <div class="content_area">
+        <h1>声音素材</h1>
+        <table>
+          <tr><td class="title_left">使用素材</td><td class="title_right">作者</td></tr>
+          <tr><td><a href="http://maoudamashii.jokersounds.com/">魔王魂</a></td><td>KOUICHI</td></tr>
+          <tr><td><a href="http://www.hmix.net/">フリー音楽素材 H/MIX GALLERY</a></td><td>秋山裕和</td></tr>
+          <tr><td><a href="http://on-jin.com/about.php">フリー効果音 On-Jin ～音人～</a></td><td>笠畑 栄樹</td></tr>
+          <tr><td><a href="http://www.vita-chi.net/sozai1.htm">びたちー素材館</a></td><td>ちぃ</td></tr>
+          <tr><td><a href="http://www.tam-music.com/index.html">TAM Music Factory</a></td><td>多夢(TAM)</td></tr>
+          <tr><td><a href="http://pansound.com/panicpumpkin/index.html">PANICPUMPKIN</a></td><td>みそか</td></tr>
+          <tr><td><a href="http://conte-de-fees.com/">フリー音楽素材こんとどぅふぇ</a></td><td>HiLi-ひぃ-</td></tr>
+          <tr><td><a href="http://musmus.main.jp/">フリー BGM 音楽素材 MusMus</a></td><td>watson</td></tr>
+          <tr><td><a href="http://www.presence-of-music.com/home.html">Presence of Music</a></td><td>Yusaku Kishigami</td></tr>
+          <tr><td><a href="http://osabisi.sakura.ne.jp/m2/">ザ マッチメイカァズ</a></td><td>OSA (Osabisi)</td></tr>
+        </table>
+      </div>
+      <div class="content_area">
+        <h1>脚本素材</h1>
+        <table>
+          <tr><td class="title_left">使用脚本</td><td class="title_right">作者</td></tr>
+          <tr><td><a href="http://www.atelier-rgss.com">MOG - Simple Anti Lag</a></td><td>Moghunter</td></tr>
+          <tr><td><a href="http://rm.66rpg.com/thread-128653-1-1.html">真·后台运行</a></td><td>紫苏</td></tr>
+          <tr><td><a href="http://rm.66rpg.com/forum.php?mod=viewthread&tid=216674&page=4#pid1817414">分辨率修正</a></td><td>wbsy8241</td></tr>
+          <tr><td><a href="http://www.tktkgame.com/">マップイベント呼び出し for VXA</a></td><td>半生(はんなま)</td></tr>
+          <tr><td><a href="http://galvs-scripts.com/">Galv's Layer Graphics</a></td><td>Galv</td></tr>
+          <tr><td><a href="http://rm.66rpg.com/thread-371224-1-1.html">单独停止播放某个 SE</a></td><td>Fux2</td></tr>
+          <tr><td><a href="http://blog.gri.im">Ingame tone editor!</a></td><td>Grim</td></tr>
+          <tr><td><a href="http://cacaosoft.web.fc2.com/">マップ画像の保存</a></td><td>CACAO</td></tr>
+          <tr><td><a href="http://rm.66rpg.com/thread-214626-1-1.html">RM 内存自动清理脚本（XP&VX） v 1.00</a></td><td>精灵使者</td></tr>
+          <tr><td><a href="http://rm.66rpg.com/thread-369217-1-1.html">追踪未释放的对象</a></td><td>taroxd</td></tr>
+          <tr><td><a href="http://forums.rpgmakerweb.com/index.php?/topic/14081-fullscreen/">Fullscreen++ v2.1</a></td><td>Zeus81</td></tr>
+          <tr><td><a href="http://rm.66rpg.com/thread-370060-1-1.html">RMVA 反傻瓜解包器 纸老虎</a></td><td>Fux2</td></tr>
+        </table>
+        <br>
+        <h1>代码借用</h1>
+        <ul>
+          <li><a href="http://rm.66rpg.com/">晴兰/Sion (66RPG)</a></li>
+          <li><a href="http://www.atelier-rgss.com">Moghunter (Atelier-Rgss)</a></li>
+          <li><a href="http://www.creationasylum.net/index.php?showtopic=752">Cybersam</a></li>
+        </ul>
+      </div>
+      <div class="content_area">
+        <h1>字体素材</h1>
+        <ul>
+          <li><a href="http://wenq.org/wqy2/index.cgi">文泉驿</a></li>
+          <li><a href="http://www.fontdiner.com/">Font Diner</a></li>
+          <li><a href="http://brittneymurphydesign.com/">Brittney Murphy</a></li>
+        </ul>
+        <br>
+        <h1>官网代码</h1>
+        <ul>
+          <li><a href="http://jquery.com/">jQuery</a></li>
+        </ul>
+        <br>
+        <h1>使用软件</h1>
+        <ul>
+          <li>RPG Maker VX Ace</li>
+          <li>PhotoImpact</li>
+          <li>TTPlayer</li>
+          <li>GoldWave</li>
+          <li>nEO iMAGING</li>
+          <li>JPGmini by voralent</li>
+          <li>PNGmini by voralent</li>
+          <li>Bandizip</li>
+          <li>WPS Office Personal</li>
+          <li>Axialis IconWorkshop</li>
+          <li>GaleBrowse</li>
+        </ul>
+      </div>
+      <div class="content_area">
+        <h1>特别感谢</h1>
+        <ul>
+          <li>taroxd</li>
+          <li>余烬之中</li>
+          <li>VIPArcher</li>
+          <li>无脑之人</li>
+          <li>菜鸟飞呀飞</li>
+          <li>泉塚四季</li>
+        </ul>
+        <br>
+        <h1>BUG反馈</h1>
+        <ul>
+          <li>蝉岭Cicada</li>
+          <li>VIPArcher</li>
+          <li>zhy012003</li>
+          <li>taroxd</li>
+          <li>菜鸟飞呀飞</li>
+          <li>YYYsai</li>
+          <li>清香白莲</li>
+          <li>青菜丶叶子</li>
+          <li>Tsusabary</li>
+          <li>WhiteFlower</li>
+          <li>satgo1546</li>
+          <li>没有网名</li>
+          <li>逗比小二傻</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div id="foot"></div>
+
+  </div><!-- div load_over -->
+
+</body>
+</html>

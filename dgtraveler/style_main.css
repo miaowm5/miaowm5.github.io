@@ -1,0 +1,18 @@
+  body {
+    background-color: black;
+    font-size: 0.9em;
+    font-family: sans-serif;
+  }
+  p,a {
+    color: #FFF;
+  }
+  #content{
+    background-image: url(img/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-width:680px;
+    min-height:520px;
+  }
+  table{
+    margin: auto;
+  }

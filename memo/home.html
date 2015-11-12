@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo 寻找记忆的少女</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <meta name="title" content="memo寻找记忆的少女" />
+  <meta name="author" content="喵呜喵5，miaowm5@gmail.com" />
+  <meta name="subject" content="解谜游戏《memo寻找记忆的少女》" />
+  <meta name="description" content="略微游戏困难的剧情解谜游戏《memo寻找记忆的少女》的官方网站！提供包括游戏下载地址在内与游戏相关的说明与介绍。" />
+  <meta name="keywords" content="memo,寻找记忆的少女,喵呜喵5,解谜游戏,rpg制作大师,游戏,免费游戏,下载" />
+  <meta name="abstract" content="解谜游戏《memo寻找记忆的少女》官方网站" />
+  <meta name="abstract" content="mwm5(2015) all rights reserved" />
+  <meta name="designer" content="喵呜喵5" />
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script src="js_main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <style type="text/css">
+    #right_area{
+      height: 28em;
+      line-height: 2;
+    }
+    .content_area{
+      height:28em;
+    }
+    #right_area a{
+      color: black;
+    }
+    #right_area p{
+      font-size: 0.9em;
+    }
+    .scroll_content{
+      margin-top: 0.5em;
+      padding-top: 0.5em;
+      height:24.5em;
+      background-color: #FFF;
+    }
+    .scroll_content li{
+      font-size: 0.9em;
+    }
+    .scroll_content>ul>li{
+      font-weight: bolder;
+    }
+    .scroll_content h2{
+      font-size: 0.9em;
+      text-decoration: underline;
+    }
+  </style>
+  <script></script>
+</head>
+<body onload="loadding()">
+
+  <!-- 错误信息 -->
+  <div id="loadding">
+    <p>
+      页面正在载入中，请思考一会人生<br>
+      如果本信息一直显示在这里可能是网络傲娇了或者浏览器不支持JavaScript。
+    </p>
+  </div>
+
+  <!-- 预加载资源 -->
+  <div class="pre_load" style="display:none">
+    <img src="img/logo.png"></img>
+    <img src="img/frame1.png"></img><img src="img/frame2.png"></img><img src="img/frame3.png"></img>
+    <img src="img/command.png"></img>
+    <img src="img/home_command.png">
+  </div>
+
+  <div id="load_over">
+
+  <!-- 页首 -->
+  <div id="head"></div>
+
+  <!-- 内容 -->
+  <div id="main_area">
+    <div id="left_area">
+      <div class='piclink' picfile="home" npic="4" hpic="5" onclick="scroll_right(0)"></div>
+      <div class='piclink' picfile="home" npic="0" hpic="1" onclick="scroll_right(1)"></div>
+      <div class='piclink' picfile="home" npic="2" hpic="3" onclick="scroll_right(2)"></div>
+    </div>
+    <div id="right_area">
+      <div class="content_area">
+        <h1>游戏制作</h1>
+          <p>喵呜喵5</p>
+        <h1>游戏大小</h1>
+          <p>65M</p>
+        <h1>当前版本</h1>
+          <p><span title="※ 2015年3月6日更新">v1.30</span></p>
+        <h1>游戏类型</h1>
+          <p>剧情、探索、解谜</p>
+        <h1>制作工具</h1>
+          <p><span title="※ 不用安装也可以进行游戏">RPG Maker VX ACE</span></p>
+        <h1>游戏时间</h1>
+          <p><span title="※ 另附1个隐藏章节">共7个章节</span>，<span title="※ 仅供参考，实际游戏时间依照个人水平而定">每章游戏时间约为20~40分钟</span></p>
+      </div>
+      <div class="content_area">
+        <h1>特别提示</h1>
+          <p>
+            <span title="※ 若1.10版及其之后版本的游戏玩家也出现了闪退的BUG，请报告给我，谢谢：）">由于未知的原因游戏可能突然退出，建议增加存档的频率。</span><br>
+            如果提示缺失文件时请检查是否有游戏文件被杀毒软件删除了。<br>
+            如果游戏的菜单键失效的话，请尝试按几下右侧数字小键盘的NumLock键。<br>
+            如果游戏一开始角色一直往某一方向走的话，请尝试按几下右侧数字小键盘2，4，6，8。<br>
+            如果游戏没有声音的话，请尝试在游戏运行中按F1检查有没有将声音关掉了。<br>
+            <a href="control.html">操作说明</a> 部分附带了游戏的提示与攻略，如果卡关时可以参考。<br>
+            游戏的通关记录和收集品保存在游戏目录下的 <span title="System.rvdata2">System</span> 文件中，
+            游戏更新时将本文件移动至新版游戏的游戏目录下即可继承之前的记录。<br>
+          </p>
+      </div>
+      <div class="content_area">
+        <h1>版本更新历史</h1>
+        <div class="scroll_content">
+          <ul>
+            <li>2015.3.6</li>
+            <h2>1.2 => 1.3</h2>
+            <ul>
+              <li>第一章、第二章游戏表现小幅调整</li>
+            </ul>
+            <li>2015.1.28</li>
+            <h2>1.1 => 1.2</h2>
+            <ul>
+              <li>修正键盘输入模式的问题并优化</li>
+              <li>修正Memo的房间楼梯可能卡死的BUG</li>
+            </ul>
+            <li>2015.1.7</li>
+            <h2>1.01 => 1.1</h2>
+            <ul>
+              <li>调整代码，大幅降低内存占用</li>
+              <li>细节调整与修正</li>
+            </ul>
+            <li>2014.10.25</li>
+            <h2>1.00a => 1.01</h2>
+            <ul>
+              <li>修正三处细节问题</li>
+              <li>调整内部数据</li>
+            </ul>
+            <li>2014.10.4</li>
+            <h2>1.00 => 1.00a</h2>
+            <ul>
+              <li>修正两处细节</li>
+            </ul>
+            <li>2014.09.30</li>
+            <h2>0.99 => 1.00</h2>
+            <ul>
+              <li>修正大量细节</li>
+            </ul>
+            <li>2014.09.29</li>
+            <h2>0.98 => 0.99</h2>
+            <ul>
+              <li>一处可能造成游戏崩溃的剧情追加了自动存档功能</li>
+              <li>轻微降低游戏难度</li>
+              <li>增加兼容输入模式，无法使用键盘输入密码时可以切换到兼容模式进行输入</li>
+            </ul>
+            <li>2014.09.27</li>
+            <h2>0.97a => 0.98</h2>
+            <ul>
+              <li>菜单中追加更多可供设置的内容</li>
+              <li>追加联网进行版本检查的功能</li>
+              <li>修正几处细节错误</li>
+            </ul>
+            <li>2014.09.26</li>
+            <h2>0.96 => 0.97a</h2>
+            <ul>
+              <li>修正一处对话细节错误</li>
+              <li>修正标题画面出错的BUG</li>
+              <li>调整代码，修正可能产生BUG的隐患</li>
+            </ul>
+            <li>2014.09.22</li>
+            <h2>0.95 => 0.96</h2>
+            <ul>
+              <li>修正几处错别字</li>
+              <li>修正几处对话细节错误</li>
+              <li>修正几处可能造成游戏崩溃的隐患</li>
+            </ul>
+            <li>2014.09.20</li>
+            <h2>0.91 => 0.95</h2>
+            <ul>
+              <li>修正多处用语部分的疏漏</li>
+              <li>修正多处错别字</li>
+              <li>第七章增加自动存档，减小游戏崩溃可能带来的损失</li>
+              <li>细节小幅改进
+            </ul>
+            <h2>0.90 => 0.91</h2>
+            <ul>
+              <li>修正菜单的BUG</li>
+              <li>补上了署名的脚本部分漏掉的作者</li>
+              <li>修改了内部数据结构，减小出错几率</li>
+              <li>修正一处错别字
+            </ul>
+          </ul>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 页脚 -->
+  <div id="foot"></div>
+
+  </div><!-- div load_over -->
+
+</body>
+</html>
+ -->

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo 寻找记忆的少女</title>
+  <meta name="title" content="memo寻找记忆的少女" />
+  <meta name="author" content="喵呜喵5，miaowm5@gmail.com" />
+  <meta name="subject" content="解谜游戏《memo寻找记忆的少女》" />
+  <meta name="description" content="略微游戏困难的剧情解谜游戏《memo寻找记忆的少女》的官方网站！提供包括游戏下载地址在内与游戏相关的说明与介绍。" />
+  <meta name="keywords" content="memo,寻找记忆的少女,喵呜喵5,解谜游戏,rpg制作大师,游戏,免费游戏,下载" />
+  <meta name="abstract" content="解谜游戏《memo寻找记忆的少女》官方网站" />
+  <meta name="abstract" content="mwm5(2015) all rights reserved" />
+  <meta name="designer" content="喵呜喵5" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script src="js_main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <style type="text/css">
+    .content_area{
+      height:37em;
+      line-height: 2;
+    }
+    #right_area{
+      height:37em;
+    }
+    #right_area a{
+      color: black;
+    }
+    #right_area p,h2{
+      font-size: 0.9em;
+    }
+    #right_area h3{
+      margin-top: -5px;
+      color: grey;
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    #right_area table{
+      margin-top: 1em;
+      width: 100%;
+      text-align: right;
+    }
+    #right_area td>img{
+      cursor: pointer;
+    }
+  </style>
+  <script></script>
+</head>
+<body onload="loadding()">
+
+  <!-- 错误信息 -->
+  <div id="loadding">
+    <p>
+      页面正在载入中，请思考一会人生<br>
+      如果本信息一直显示在这里可能是网络傲娇了或者浏览器不支持JavaScript。
+    </p>
+  </div>
+
+  <!-- 预加载资源 -->
+  <div class="pre_load" style="display:none">
+    <img src="img/logo.png"></img>
+    <img src="img/frame1.png"></img><img src="img/frame2.png"></img><img src="img/frame3.png"></img>
+    <img src="img/command.png"></img>
+    <img src="img/voice_command.png"></img>
+  </div>
+
+  <div id="load_over">
+
+  <!-- 页首 -->
+  <div id="head"></div>
+
+  <!-- 内容 -->
+  <div id="main_area">
+    <div id="left_area">
+      <div class='piclink' picfile="voice" npic="3" hpic="4" onclick="scroll_right(0)"></div>
+      <div class='piclink' picfile="voice" npic="5" hpic="0" onclick="scroll_right(1)"></div>
+      <div class='piclink' picfile="voice" npic="1" hpic="2" onclick="scroll_right(2)"></div>
+    </div>
+    <div id="right_area">
+      <div class="content_area">
+        <h1>享受作为游戏制作者的乐趣，语音包系统开放！</h1>
+        <h2>语音包是什么？</h2>
+        <p>
+        语音包，顾名思义就是游戏对话时播放的语音，从角色的名台词到角色思考问题的“唔”等语气词，游戏中人物的每一句对话都可以播放对应的语音！</br>
+        厌倦了游戏显示文字时默认的嘟嘟嘟嘟声？为什么不自己动手给你自己所中意的角色配音呢！</br>
+        <img src="img/voice_pic1.png"></img>
+        </p>
+      </div>
+      <div class="content_area">
+        <h1>享受作为游戏制作者的乐趣，语音包系统开放！</h1>
+        <h2>如何使用语音包呢？</h2>
+        <p>
+        下载别人制作好的语音包，解压缩后将解压后的内容复制进游戏目录下的Vocie文件夹中，再次启动游戏时便能导入语音数据了！如果语音文件存在，进行游戏时语音就会在对应的对话部分自动播放。</br>
+        听着人物的对话语音也能获得别样的游戏体验呢！</br>
+        范例语音包下载：</br>
+        链接: <a href="http://pan.baidu.com/s/1gdmrBj1">http://pan.baidu.com/s/1gdmrBj1</a> 密码: a0do
+        </p>
+      </div>
+      <div class="content_area">
+        <h1>任何人都可以制作的语音包！</h1>
+        <h3>无需借助游戏作者的力量也能轻松的制作出自己专属的语音包！</h3>
+        <h2>记录语音的位置</h2>
+        <p>
+        在游戏菜单中开启CV模式后，每句对话下方会出现一串数字，记住每句台词对应的数字。</br>
+        <img src="img/voice_pic2.jpg"></img>
+        </p>
+        <table><tr><td>
+          <img class="pichange"
+            src="img/voice_command4.png" npic="voice_command4.png" hpic="voice_command4_c.png"
+            onclick="scroll_right(3)" ></img></td><tr></table>
+      </div>
+      <div class="content_area">
+        <h1>任何人都可以制作的语音包！</h1>
+        <h3>无需借助游戏作者的力量也能轻松的制作出自己专属的语音包！</h3>
+        <h2>录音并制作语音文件</h2>
+        <p>
+        用录音软件录下语音，将语音文件的格式转换为ogg格式，接着将对应的文件放入游戏目录下的Voice文件夹中。</br>
+        <img src="img/voice_pic3.png"></img>
+        </p>
+        <table><tr><td><img class="pichange"
+            src="img/voice_command4.png" npic="voice_command4.png" hpic="voice_command4_c.png"
+            onclick="scroll_right(4)" ></img></td><tr></table>
+      </div>
+      <div class="content_area">
+        <h1>任何人都可以制作的语音包！</h1>
+        <h3>无需借助游戏作者的力量也能轻松的制作出自己专属的语音包！</h3>
+        <h2>标注语音文件的位置</h2>
+        <p>
+        用Excel表格列出语音文件的文件名与对应台词的数字（第一列填入游戏中显示的数字，第二列填入对应的语音文件文件名。另外，第二列填入 SILENT 则表示本句对话完全静音），将Excel保存为CSV格式，名字为index，放入游戏目录下的Voice文件夹中。</br>
+        <img src="img/voice_pic4.jpg"></img>
+        </p>
+        <table><tr><td><img class="pichange"
+            src="img/voice_command4.png" npic="voice_command4.png" hpic="voice_command4_c.png"
+            onclick="scroll_right(5)" ></img></td><tr></table>
+      </div>
+      <div class="content_area">
+        <h1>任何人都可以制作的语音包！</h1>
+        <h3>无需借助游戏作者的力量也能轻松的制作出自己专属的语音包！</h3>
+        <h2>打开游戏，重新显示对应的对话时语音就会随着对话一起开始播放了</h2>
+        <p>
+        将Vocie文件夹打包后分享给其他人，其他人在运行游戏时就能听到由你制作的语音了！</br>
+        <img src="img/voice_pic1.png"></img>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div id="foot"></div>
+
+  </div><!-- div load_over -->
+
+</body>
+</html>

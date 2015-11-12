@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo 寻找记忆的少女</title>
+  <meta name="title" content="memo寻找记忆的少女" />
+  <meta name="author" content="喵呜喵5，miaowm5@gmail.com" />
+  <meta name="subject" content="解谜游戏《memo寻找记忆的少女》" />
+  <meta name="description" content="略微游戏困难的剧情解谜游戏《memo寻找记忆的少女》的官方网站！提供包括游戏下载地址在内与游戏相关的说明与介绍。" />
+  <meta name="keywords" content="memo,寻找记忆的少女,喵呜喵5,解谜游戏,rpg制作大师,游戏,免费游戏,下载" />
+  <meta name="abstract" content="解谜游戏《memo寻找记忆的少女》官方网站" />
+  <meta name="abstract" content="mwm5(2015) all rights reserved" />
+  <meta name="designer" content="喵呜喵5" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script src="js_main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <style type="text/css">
+    .content_area{
+      height:22em;
+      line-height: 2;
+    }
+    #right_area{
+      height:22em;
+    }
+    #right_area>*>p,li{
+      font-size: 0.9em;
+    }
+    #right_area>*>p{
+      text-align: center;
+    }
+    .delete{
+      text-decoration: line-through;
+    }
+    #right_area table{
+      width:100%;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+  <script></script>
+</head>
+<body onload="loadding()">
+
+  <!-- 错误信息 -->
+  <div id="loadding">
+    <p>
+      页面正在载入中，请思考一会人生<br>
+      如果本信息一直显示在这里可能是网络傲娇了或者浏览器不支持JavaScript。
+    </p>
+  </div>
+
+  <!-- 预加载资源 -->
+  <div class="pre_load" style="display:none">
+    <img src="img/logo.png"></img>
+    <img src="img/frame1.png"></img><img src="img/frame2.png"></img><img src="img/frame3.png"></img>
+    <img src="img/command.png"></img>
+    <img src="img/describe_command.png"></img>
+    <img src="img/describe_memo_c.png"></img><img src="img/describe_ego_c.png"></img>
+  </div>
+
+  <div id="load_over">
+
+  <!-- 页首 -->
+  <div id="head"></div>
+
+  <!-- 内容 -->
+  <div id="main_area">
+    <div id="left_area">
+      <div class='piclink' picfile="describe" npic="3" hpic="4" onclick="scroll_right(0)"></div>
+      <div class='piclink' picfile="describe" npic="5" hpic="0" onclick="scroll_right(1)"></div>
+      <div class='piclink' picfile="describe" npic="1" hpic="2" onclick="scroll_right(2)"></div>
+    </div>
+    <div id="right_area">
+      <div class="content_area">
+        <h1>STORY</h1>
+        <p>
+          - 如同传统的解谜游戏开场那样 -<br>
+          - 作为主角的少女在陌生的房间中醒过来时发现自己失去了记忆 -<br>
+          - 房间的桌子上则留着一张写着“去寻找自己记忆吧”的纸条 -<br>
+          - 触碰房间中的齿轮形状硬糖时 -<br>
+          - 丢失的记忆真的逐渐恢复 -<br>
+          - 当少女还在对自己身上发生的事情感到不知所措时 -<br>
+          - 某个齿轮已经开始转动了…… -<br>
+        </p>
+      </div>
+      <div class="content_area">
+        <h1>请注意，本游戏包含：</h1>
+        <ul>
+          <li>大量的文字</li>
+          <li>轻微的负面情绪</li>
+          <li>昏暗的画面</li>
+          <li>较为困难的解谜谜题</li>
+          <li><p class="delete">百合（？）</p></li>
+          <li><p class="delete">姐妹百合（？？）</p></li>
+        </ul>
+      </div>
+      <div class="content_area">
+        <h1>人物介绍</h1>
+        <table><tr><td>
+          <img class="pichange" src="img/describe_memo.png" npic="describe_memo.png" hpic="describe_memo_c.png" ></img>
+        </td><td>
+          <img class="pichange" src="img/describe_ego.png" npic="describe_ego.png" hpic="describe_ego_c.png" ></img>
+        </td></tr></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div id="foot"></div>
+
+  </div><!-- div load_over -->
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo 寻找记忆的少女</title>
+  <meta name="title" content="memo寻找记忆的少女" />
+  <meta name="author" content="喵呜喵5，miaowm5@gmail.com" />
+  <meta name="subject" content="解谜游戏《memo寻找记忆的少女》" />
+  <meta name="description" content="略微游戏困难的剧情解谜游戏《memo寻找记忆的少女》的官方网站！提供包括游戏下载地址在内与游戏相关的说明与介绍。" />
+  <meta name="keywords" content="memo,寻找记忆的少女,喵呜喵5,解谜游戏,rpg制作大师,游戏,免费游戏,下载" />
+  <meta name="abstract" content="解谜游戏《memo寻找记忆的少女》官方网站" />
+  <meta name="abstract" content="mwm5(2015) all rights reserved" />
+  <meta name="designer" content="喵呜喵5" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+  <script src="js_main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <style type="text/css">
+    .content_area{
+      height:45em;
+      line-height: 2;
+    }
+    #right_area{
+      height:45em;
+    }
+    #right_area p,#right_area li,#right_area table{
+      font-size: 0.9em;
+    }
+    #right_area a{
+      color: black;
+    }
+    #right_area h2{
+      color: white;
+      font-size: 0.9em;
+      background-color: brown;
+      padding-left: 0.7em;
+    }
+    #right_area table{
+      width:100%;
+      border:2px solid #555;
+      text-align: center;
+    }
+    #right_area td{
+      border:1px solid #555;
+    }
+    #right_area .left_title{
+      font-weight: bolder;
+      color: white;
+      background-color: brown;
+    }
+  </style>
+  <script></script>
+</head>
+<body onload="loadding()">
+
+  <!-- 错误信息 -->
+  <div id="loadding">
+    <p>
+      页面正在载入中，请思考一会人生<br>
+      如果本信息一直显示在这里可能是网络傲娇了或者浏览器不支持JavaScript。
+    </p>
+  </div>
+
+  <!-- 预加载资源 -->
+  <div class="pre_load" style="display:none">
+    <img src="img/logo.png"></img>
+    <img src="img/frame1.png"></img><img src="img/frame2.png"></img><img src="img/frame3.png"></img>
+    <img src="img/command.png"></img>
+    <img src="img/question_command.png">
+  </div>
+
+  <div id="load_over">
+
+  <!-- 页首 -->
+  <div id="head"></div>
+
+  <!-- 内容 -->
+  <div id="main_area">
+    <div id="left_area">
+      <div class='piclink' picfile="question" npic="4" hpic="7" onclick="scroll_right(0)"></div>
+      <div class='piclink' picfile="question" npic="6" hpic="1" onclick="scroll_right(1)"></div>
+      <div class='piclink' picfile="question" npic="0" hpic="3" onclick="scroll_right(2)"></div>
+      <div class='piclink' picfile="question" npic="2" hpic="5" onclick="scroll_right(3)"></div>
+    </div>
+    <div id="right_area">
+      <div class="content_area">
+        <h1>与游戏相关的问题</h1>
+        <h2>杀毒软件提示病毒？</h2>
+        <p>
+          杀毒软件可能会对 Game.exe 这个文件报毒。一般情况下这种报毒属于杀毒软件的误报，请将这个文件加入杀毒软件的白名单中。如果报毒的是其他文件，请删除对应文件并将杀毒软件的结果报告给我。另外，我只对我自己提供的游戏下载地址负责，其他下载地址下载下来的游戏的安全性请自行判断。
+        </p>
+        <h2>游戏的基本操作？</h2>
+        <p>
+          本游戏为纯键盘游戏，具体的操作请参考 <a href="control.html">操作说明</a> 页面。
+        </p>
+        <h2>游戏卡关了，不知道接下去应该做什么？</h2>
+        <p>
+          官网提供了游戏的提示和攻略，卡关时可以查看，具体内容请参考 <a href="control.html">操作说明</a> 页面。<br>
+          个人建议只在游戏进度完全没有进展超过五分钟以上时再查看攻略。
+        </p>
+        <h2>如何使用游戏的语音包？</h2>
+        <p>
+          本游戏支持外挂语音包，任何人都能自由的制作游戏的语音包。具体的操作请参考 <a href="voice.html">语音包说明</a> 页面。
+        </p>
+        <h2>游戏的剧情无法理解？</h2>
+        <p>
+          ……不好意思，这个问题我没法为您提供帮助。我一定会继续学习来加强自己的能力，争取让自己的下一个游戏能够拥有让您理解的剧情的。
+        </p>
+        <h2>我希望分享这个游戏？</h2>
+        <p>
+          欢迎欢迎！您可以自由的转载/分享这个游戏。不过分享游戏时有下面几点需要注意的地方，请先仔细确认一下：
+        <ul>
+          <li><strong>绝对不要</strong>谎称自己是游戏的制作者或者在转载游戏时做出类似可能造成误解的行为。
+          <li><strong>绝对不要</strong>以收费为代价提供游戏的下载地址。
+          <li>可以分享的仅仅只是游戏本身，而不是游戏中的某个单独的素材。（不过游戏的截图是可以分享的。）
+          <li>游戏的下载地址建议使用我的游戏发布帖中提供的下载地址（<a href="http://memo-girl.lofter.com/download">http://memo-girl.lofter.com/download</a>），只有这个地址我才能保证永久有效并且为最新的游戏版本。
+          </ul>
+        </p>
+      </div>
+      <div class="content_area">
+        <h1>与实况/二次创作相关的问题</h1>
+        <h2>我希望实况这个游戏？</h2>
+        <p>
+          欢迎欢迎！您可以自由的实况这个游戏而不需要事先征得我的许可。实况结束后如果您愿意将实况地址告诉我的话我会很开心的。另外，由于我个人的时间、精力有限，您的生放送/实况我可能并没有时间前去观看或者评分，还请您见谅。
+        </p>
+        <h2>我希望对游戏进行二次创作？</h2>
+        <p>
+          欢迎欢迎！您可以自由的进行游戏的二次创作而不需要事先征得我的许可。<br>
+          所谓的二次创作包含同人图的绘制、同人文的写作、同人游戏的制作等。将这些二次创作后的产物在同人展等场合进行贩售也是可以的，我并不会因此像您征收任何的费用。
+          但是二次创作过程中请遵守以下几点规则：
+        <ul>
+            <li>您的二次创作作品必须完全原创。这条规则的意思是指，您不能通过任何手段破解我的游戏后直接使用游戏中的素材或者游戏本体进行您的二次创作。</li>
+            <li>公开您的作品时请注明这份作品属于我的游戏的二次创作。</li>
+            <li>自由二次创作的权利只面向个人以及同人社团。如果您隶属于某个公司/企业/法人代表的话，进行二次创作前请事先与我联系。</li>
+          </ul>
+        </p>
+        <h2>我希望自行发布这个游戏的改版？</h2>
+        <p>
+          以修改游戏的难度、修正游戏的 BUG 或是增加特殊的剧情等目的发布这个游戏的改版是不被允许的。如果真的有这种需求时请联系我，不过，一般情况下，除了修正 BUG 以外，其他情况的需求我并不会受理。<br>
+          如果您希望将这个游戏的语言进行改变，发布其他语种版本的游戏改版的话请联系我，我将提供必要的协助。
+        </p>
+      </div>
+      <div class="content_area">
+        <h1>其他我能想到的问题</h1>
+        <h2>游戏使用的素材？</h2>
+        <p>
+          除了 <a href="staff.html">使用素材</a> 页面列出的素材外，无特殊说明时，包括游戏官网的 Html/Javascript/CSS 代码在内所有和游戏有关的素材都为我自己原创的素材。<br>
+          如果素材列表中出现了遗漏或者使用的任何素材侵犯了您的合法权益，请与我联系，我将尽快做出处理。
+        </p>
+        <h2>出于学习的目的破解游戏？</h2>
+        <p>
+          就算是出于交流、学习等目的，我也<strong>绝对不允许</strong>您将本游戏进行解包、破解或者传播、使用游戏中的素材。如果有什么希望学习的内容，您可以前往 <a href="http://rm.66rpg.com/">http://rm.66rpg.com/</a> 进行提问，包括我在内很多人都会亲切的给予您回答的。
+        </p>
+        <h2>官网没有包含我想知道的问题？</h2>
+        <p>
+          所有与本游戏相关的问题都可以向我留言提问。另外由于个人的时间、精力有限，不能保证能够立刻对您进行回复，这一点还请见谅。<br>
+          关于我的联系方式，请参考 <a href="#" onclick="scroll_right(4,4);return false">这个页面</a> 。
+        </p>
+      </div>
+      <div class="content_area">
+        <h1>您可以通过以下方式与我联系</h1>
+        <table>
+          <tr><td class="left_title">网名（H.N）</td><td>喵呜喵5 @ 求职中</td></tr>
+          <tr><td class="left_title">QQ 邮箱/QQ 号</td><td><a href="mailto:mw-m5@qq.com">mw-m5@qq.com</a></td></tr>
+          <tr><td class="left_title">Gmail 邮箱</td><td><a href="mailto:miaowm5@gmail.com">miaowm5@gmail.com</a></td></tr>
+          <tr><td class="left_title">新浪微博</td><td><a href="http://weibo.com/mwm5/">喵呜喵5</a></td></tr>
+          <tr><td class="left_title">百度贴吧</td><td><a href="http://tieba.baidu.com/i/54536419/">喵呜喵5</a></td></tr>
+          <tr><td class="left_title">6R 论坛账号</td><td><a href="http://rm.66rpg.com/?291206">喵呜喵5</a></td></tr>
+          <tr><td class="left_title">其他留言方式</td><td>由我自己发布的游戏发布帖</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div id="foot"></div>
+
+  </div><!-- div load_over -->
+
+</body>
+</html>

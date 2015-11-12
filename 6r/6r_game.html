@@ -1,0 +1,121 @@
+<script>
+  function random_game(){
+    if ( $("#game_ad").attr("showing") == 1) { return }
+    $("#game_ad").attr("showing",1)
+    var now_show = $("#game_ad").attr("now_show")
+    if( now_show > -1 ){
+      $("#game_ad .game_content:eq("+now_show+")").fadeOut(300,function(){
+        show_new_game(now_show)
+      })
+    }
+    else{ show_new_game(now_show) }
+  }
+  function show_new_game(now_show){
+    var index
+    do {
+      index = RandNumMax( $("#game_ad .game_content").length )
+    } while (index == now_show);
+    $("#game_ad").attr("now_show",index)
+    $("#game_ad .game_content:eq("+index+")").fadeIn(300,function(){
+      $("#game_ad").attr("showing",0)
+    })
+  }
+</script>
+
+<div id="game_ad" now_show="-1">
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="background-image:url(img/frame1.jpg);background-position:0px 0px;width:16px;height:16px"></td>
+    <td style="background-image:url(img/frame2.jpg);background-position:0px 0px;height:16px"></td>
+    <td style="background-image:url(img/frame1.jpg);background-position:16px 0px;width:16px;height:16px"></td>
+  </tr>
+  <tr>
+    <td style="background-image:url(img/frame3.jpg);background-position:0px 0px;width:16px"></td>
+    <td style="background-color:RGB(79,79,79)">
+
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>发生在夜晚学校的血红色故事——</h1>
+    <div class="img">
+      <a href="http://guaiwulishi.lofter.com" target="_blank"><img src="img/game/2.jpg" /></a>
+    </div>
+    <p>以学校为背景的恐怖解谜游戏！</p>
+    <p>故事以某个充斥着恐怖流言与不可告人的过去的学校为舞台，</p>
+    <p>在昏暗的雨夜独自前往学校的主角与那个相遇了...</p>
+    <p>记载在怪物的历史书上的绝望历史，今夜再次重演！</p>
+  </div>
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>有些困难的解谜游戏——</h1>
+    <div class="img">
+      <a href="http://memo-girl.lofter.com/postlink" target="_blank"><img src="img/game/1.jpg" /></a>
+    </div>
+    <p>“去寻找被我取走后分散在房间各处的你的记忆吧。”</p>
+    <p>以这句稍微有些奇怪又略微有些恐怖的台词作为引子，</p>
+    <p>从沉睡中醒来的少女开始在陌生大宅中探险。</p>
+    <p>包含大量文字、对话与困难谜题的另类RM解谜游戏就此登场！</p>
+  </div>
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>门之世界的旅行者——</h1>
+    <div class="img">
+      <a href="http://mw-m5.lofter.com/post/3e94b_11b4e7f" target="_blank"><img src="img/game/3.jpg" /></a>
+    </div>
+    <p>在由一扇扇门连接起来的破碎世界中，</p>
+    <p>名为“污点”的敌人步步逼近。</p>
+    <p>为了探寻自己来到这个世界的意义，主角推开了房门……</p>
+    <p>以奇妙设定为傲的剧情类游戏此刻开始！</p>
+  </div>
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>以记忆为线索的另类解谜游戏——</h1>
+    <div class="img">
+      <a href="http://mw-m5.lofter.com/post/3e94b_11b4e29" target="_blank"><img src="img/game/4.jpg" /></a>
+    </div>
+    <p>年月日都未知的下雨之夜，</p>
+    <p>从黑暗中醒来的少女看见了一具被剪刀捣烂的尸体。</p>
+    <p>在残留着阴森气息的不明研究所中，</p>
+    <p>未命名少女以记忆为线索的冒险就这么开始了……</p>
+  </div>
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>简单到没有起承转合的视觉小说——</h1>
+    <div class="img">
+      <a href="http://mw-m5.lofter.com/post/3e94b_1222701" target="_blank"><img src="img/game/5.jpg" /></a>
+    </div>
+    <p>在故乡的长椅上，失忆的旅行者费米独自喝着闷酒。</p>
+    <p>由于离开故乡太长时间，此时此地已经没有人认识他了。</p>
+    <p>向着这样的费米搭话的，</p>
+    <p>是一名穿着白色连衣裙的少女……</p>
+  </div>
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>迷宫大陆的冒险故事——</h1>
+    <div class="img">
+      <a href="http://rm.66rpg.com/thread-375159-1-1.html" target="_blank"><img src="img/game/6.jpg" /></a>
+    </div>
+    <p>迷宫大陆冒险故事第二弹！</p>
+    <p>在充斥着曾经作为怪物巢穴的北方大陆，</p>
+    <p>没有力量的普通旅人与不知死活的古怪少女在迷宫中相遇。</p>
+    <p>这次短暂的交错究竟会产生怎样的故事？</p>
+  </div>
+  <div class="game_content hint" hint_text="点击图片打开下载地址">
+    <h1>闹心视觉小说的多平台通用重制版——</h1>
+    <div class="img">
+      <a href="http://mw-m5.lofter.com/post/3e94b_5b38928" target="_blank"><img src="img/game/7.jpg" /></a>
+    </div>
+    <p>在故乡的长椅上，失忆的旅行者费米独自喝着闷酒。</p>
+    <p>由于离开故乡太长时间，此时此地已经没有人认识他了。</p>
+    <p>向着这样的费米搭话的，是一名穿着白色连衣裙的少女……</p>
+    <p>视觉小说《长椅》的多平台通用重制版！</p>
+  </div>
+
+  <button class="hint" hint_text="再看看其他的游戏？">换一个</button>
+
+    </td>
+    <td style="background-image:url(img/frame3.jpg);background-position:16px 0px;width:16px"></td>
+  </tr>
+
+  <tr>
+    <td style="background-image:url(img/frame1.jpg);background-position:0px 16px;width:16px;height:16px"></td>
+    <td style="background-image:url(img/frame2.jpg);background-position:0px 16px;height:16px"></td>
+    <td style="background-image:url(img/frame1.jpg);background-position:16px 16px;width:16px;height:16px"></td>
+  </tr>
+
+</table>
+</div>

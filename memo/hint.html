@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo 寻找记忆的少女</title>
+  <meta name="title" content="memo寻找记忆的少女" />
+  <meta name="author" content="喵呜喵5，miaowm5@gmail.com" />
+  <meta name="subject" content="解谜游戏《memo寻找记忆的少女》" />
+  <meta name="description" content="略微游戏困难的剧情解谜游戏《memo寻找记忆的少女》的官方网站！提供包括游戏下载地址在内与游戏相关的说明与介绍。" />
+  <meta name="keywords" content="memo,寻找记忆的少女,喵呜喵5,解谜游戏,rpg制作大师,游戏,免费游戏,下载" />
+  <meta name="abstract" content="解谜游戏《memo寻找记忆的少女》官方网站" />
+  <meta name="abstract" content="mwm5(2015) all rights reserved" />
+  <meta name="designer" content="喵呜喵5" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="style_main.css">
+  <link rel="stylesheet" type="text/css" href="style_hint.css">
+  <script src="js_main.js"></script>
+  <script src="js_hint.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript">
+    !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
+  </script>
+  <style type="text/css">
+    .content_area{
+      height:23em;
+      line-height: 2;
+    }
+    #right_area{
+      height:23em;
+    }
+  </style>
+  <script></script>
+</head>
+<body onload="loadding();set_hint_action()">
+
+  <!-- 错误信息 -->
+  <div id="loadding">
+    <p>
+      页面正在载入中，请思考一会人生<br>
+      如果本信息一直显示在这里可能是网络傲娇了或者浏览器不支持JavaScript。
+    </p>
+  </div>
+
+  <!-- 预加载资源 -->
+  <div class="pre_load" style="display:none">
+    <img src="img/logo.png"></img>
+    <img src="img/frame1.png"></img><img src="img/frame2.png"></img><img src="img/frame3.png"></img>
+    <img src="img/command.png"></img>
+    <img src="img/hint_command.png"></img>
+  </div>
+
+  <div id="load_over">
+
+  <!-- 页首 -->
+  <div id="head"></div>
+
+  <!-- 内容 -->
+  <div id="main_area">
+    <div id="left_area">
+      <div class='piclink' picfile="hint" npic="7" hpic="6" onclick="scroll_right(0)"></div>
+      <div class='piclink' picfile="hint" npic="11" hpic="10" onclick="scroll_right(1)"></div>
+      <div class='piclink' picfile="hint" npic="9" hpic="2" onclick="scroll_right(2)"></div>
+      <div class='piclink' picfile="hint" npic="1" hpic="0" onclick="scroll_right(3)"></div>
+      <div class='piclink' picfile="hint" npic="5" hpic="4" onclick="scroll_right(4)"></div>
+      <div class='piclink' picfile="hint" npic="3" hpic="8" onclick="scroll_right(5)"></div>
+    </div>
+    <div id="right_area">
+      <div class="content_area">
+        <h1>第一章要点提示</h1>
+        <h2 class="click">▲点击显示提示</h2>
+        <h2 class="wait_click">在菜单中选择物品可以将物品拿在手上。</h2>
+        <h2 class="wait_click">房间中最黑的地方只有触发剧情后才可以调查。</h2>
+        <h2 class="wait_click">窗台上也放着齿轮糖哦。</h2>
+        <h2 class="wait_click">14 = 9 + 5</h2>
+      </div>
+      <div class="content_area">
+        <h1>第二章要点提示</h1>
+        <h2 class="click">▲点击显示提示</h2>
+        <h2 class="wait_click">一楼被藏起来的两个物品提示已经非常明显了。</h2>
+        <h2 class="wait_click">两只小狗和一只小狗是不同的哦。</h2>
+        <h2 class="wait_click">除了厨房以外，时钟还在什么地方出现过呢？</h2>
+        <h2 class="wait_click">除了厨房的门以外，还有什么东西是因为被卡住而无法打开的呢？</h2>
+      </div>
+      <div class="content_area">
+        <h1>第三章要点提示</h1>
+        <h2 class="click">▲点击显示提示</h2>
+        <h2 class="wait_click">先从打开Ego房间的另一扇门开始吧。</h2>
+        <h2 class="wait_click">按照记忆规规矩矩的在厨房调查可疑的地方吧。</h2>
+        <h2 class="wait_click">密码被写在了厨房的另一侧。</h2>
+        <h2 class="wait_click">虽然有提示，但是花园里的东西有点不容易看清哦。</h2>
+        <h2 class="wait_click">只有自己用的上的钥匙，会是哪个房间的呢？</h2>
+        <h2 class="wait_click">是不是感觉座钟的台词有点熟悉，之前第一章时是如何解谜的？</h2>
+        <h2 class="wait_click">Ego挡住了时钟？厨房是不是还有什么东西没有找到呢？</h2>
+        <h2 class="wait_click">Ego的房间的时钟要拨动到哪个时间呢？</h2>
+      </div>
+      <div class="content_area">
+        <h1>第四章要点提示</h1>
+        <h2 class="click">▲点击显示提示</h2>
+        <h2 class="wait_click">褐色的钥匙能够打开二楼的柜子。</h2>
+        <h2 class="wait_click">把硬糖盒子拿给Ego看看吧。</h2>
+        <h2 class="wait_click">记忆中Memo将记忆放到什么地方了呢？</h2>
+        <h2 class="wait_click">无法理解那串暗号的意思的话，去看看落在地上的报纸吧。</h2>
+        <h2 class="wait_click">既没有钥匙孔又没有挂锁的房间的房门应该如何打开呢？</h2>
+      </div>
+      <div class="content_area">
+        <h1>第五章要点提示</h1>
+        <h2 class="click">▲点击显示提示</h2>
+        <h2 class="wait_click">先从找到需要插入书本的书架在哪个房间开始吧。</h2>
+        <h2 class="wait_click">M横过来看就是3了。</h2>
+        <h2 class="wait_click">M在单词表中的顺序则是13。</h2>
+        <h2 class="wait_click">在客厅写着无法理解文字的柜子有人能翻译了哦。</h2>
+        <h2 class="wait_click">并不会真的让你分解质因数，答案就藏在某个草稿上。</h2>
+        <h2 class="wait_click">虽然有点丢脸，不过因为Memo是笨蛋所以有时候不得不遵照Ego的指示才能有所突破。</h2>
+        <h2 class="wait_click">要收集的书总共有四本。</h2>
+        <h2 class="wait_click">藏在书架上的法语单词是不是在哪里见过呢？</h2>
+        <h2 class="wait_click">将那份温柔的记忆传达给Ego吧。</h2>
+      </div>
+      <div class="content_area">
+        <h1>第六章要点提示</h1>
+        <h2 class="click">▲点击显示提示</h2>
+        <h2 class="wait_click">厨房里的猫咪先生比往常都要安分呢……</h2>
+        <h2 class="wait_click">因为猫咪先生不是机器人，所以将它塞到奇怪的机器中是不对的！</h2>
+        <h2 class="wait_click">推箱子可以按确定键重置箱子，所以请自由的尝试。</h2>
+        <h2 class="wait_click">客厅里有什么可以用来装水的容器呢？</h2>
+        <h2 class="wait_click">五边形符号之前在什么地方见过呢？</h2>
+        <h2 class="wait_click">某个地方的暖炉已经打开了。</h2>
+        <h2 class="wait_click">将所有未打开的柜子一并打开，收集全部的线索吧。</h2>
+        <h2 class="wait_click">与密码有关的最重要的线索早在第三章时就已经获得了。</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div id="foot"></div>
+
+  </div><!-- div load_over -->
+
+</body>
+</html>
