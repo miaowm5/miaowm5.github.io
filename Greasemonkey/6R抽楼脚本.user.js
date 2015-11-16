@@ -5,12 +5,12 @@
 // @description  自动抽楼
 // @author       Miaowm5
 // @match        http://rm.66rpg.com/thread-*
+// @match        http://rm.66rpg.com/forum.php?mod=viewthread&*
 // @grant        none
-// @run-at       document-body
 // ==/UserScript==
 
 jQuery(function(){
-  var blackList = " 喵呜喵5 Taroxd 刺夜之枪 "
+  var blackList = " 喵呜喵5 "
   var $ = jQuery
   $(".authi:even").each(function(){
     var userName = $(this).children('a').text()
