@@ -10,9 +10,14 @@
 // ==/UserScript==
 
 jQuery(function(){
-  jQuery(".authi:even").each(function(){
-    var jq = jQuery
-    var userName = jq(this).children('a').text()
-    if (userName == '喵呜喵5') jq(this).parents('table').hide()
+  var blackList = " 喵呜喵5 Taroxd 刺夜之枪 "
+  var $ = jQuery
+  $(".authi:even").each(function(){
+    var userName = $(this).children('a').text()
+    if (blackList.indexOf(userName) >= 0) $(this).parents('table').hide()
+  })
+  $("div.pstl.xs1").each(function(){
+    var userName = $(this).find('a').text()
+    if (blackList.indexOf(userName) >= 0) $(this).hide()
   })
 })
