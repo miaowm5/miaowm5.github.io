@@ -1,0 +1,29 @@
+body{
+  font-size: 14px;
+  background-color: #F3F3F3;
+}
+#title{
+  background-color: #303;
+  padding: .5em 1em;
+  font-size: 0.8em;
+}
+#title a{
+  outline: none;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: .3em;
+  padding: .5em 1.5em;
+  color: #fff;
+  background-color: #303;
+}
+#error{
+  margin-top: 2em;
+  text-align: center;
+  color: #444;
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+#viewport{ padding: 0em .5em; }

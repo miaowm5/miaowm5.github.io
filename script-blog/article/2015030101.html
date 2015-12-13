@@ -1,0 +1,93 @@
+  <h1>制作一个Mogeko Castle式的菜单界面（1）</h1>
+  <p>前一段时间玩了海底囚人的 Mogeko Castle ，虽然电波对不上玩起来感觉有点微妙，但是这个游戏使用的菜单还是有点意思的。因此，打算写一个简单的教程介绍一下如何使用RMVA制作出这样的菜单。请注意，下面的教程要求你有一定的脚本基础，整个教程我更多的是说明我写这个脚本时的思路而不是为什么可以这么写，因此……嘛。</p>
+  <p>首先先放上游戏菜单的截图：</p>
+  <div class="img"><img src="img/2015030101/01.jpg" /></div>
+  <p>另外，随着游戏进程的推进或者游戏中加入新角色时，菜单中的立绘和人物信息还会发生改变，例如下面这样：</p>
+  <div class="img"><img src="img/2015030101/02.jpg" /></div>
+  <p>大概搞懂了需求以后，下面就开始开心的写代码吧。</p>
+  <p>首先，先在 Window_MenuCommand 中删除菜单不需要的选项。</p>
+  <pre class="sh_ruby">
+class Window_MenuCommand
+  def make_command_list
+    add_command(Vocab::item, :item)
+    add_original_commands
+    add_save_command
+    add_game_end_command
+  end
+end</pre>
+  <p>这个地方保留了 add_original_commands 以增强和其他菜单添加选项脚本的兼容性。</p>
+  <p>接着，进入到 Scene_Menu 中，把不需要的成员状态窗口删除。</p>
+  <pre class="sh_ruby">
+class Scene_Menu
+  def create_status_window
+  end
+end</pre>
+  <p>现在的菜单大概是这种感觉：</p>
+  <div class="img"><img src="img/2015030101/03.jpg" /></div>
+  <p>注意到原本的菜单中这两个窗口并不是仅仅贴着屏幕边缘而是和其有一小段距离的，在 start 的最后将这两个窗口的位置稍微移动一些。</p>
+  <pre class="sh_ruby">
+class Scene_Menu
+  alias m5_20150301_start start
+  def start
+    m5_20150301_start
+    @command_window.x += 6
+    @command_window.y += 6
+    @gold_window.x += 6
+    @gold_window.y -= 6
+  end
+end</pre>
+  <div class="img"><img src="img/2015030101/04.jpg" /></div>
+  <p>下面开始制作显示当前队伍成员的窗口，新建一个 Window_Base 的子类，起一个不容易冲突的名字。最开始，先将这个窗口的位置定在(200,200)，大小设置为160*100试试看。</p>
+  <pre class="sh_ruby">
+class Window_M5ActorStatus20150301 < Window_Base
+  def initialize
+    super(200,200,160,100)
+  end
+end</pre>
+  将这个窗口载入游戏中的菜单里：
+  <pre class="sh_ruby">
+class Scene_Menu
+  alias m5_20150301_start start
+  def start
+    m5_20150301_start
+    @command_window.x += 6
+    @command_window.y += 6
+    @gold_window.x += 6
+    @gold_window.y -= 6
+    @actor_window = Window_M5ActorStatus20150301.new
+  end
+end</pre>
+  <div class="img"><img src="img/2015030101/05.jpg" /></div>
+  <p>总体来看，似乎没有什么大问题，接下去就开始为窗口内部描绘文字了。</p>
+  <p>目前为止的代码</p>
+  <pre class="sh_ruby">
+class Window_MenuCommand
+  def make_command_list
+    add_command(Vocab::item, :item)
+    add_original_commands
+    add_save_command
+    add_game_end_command
+  end
+end
+class Scene_Menu
+  alias m5_20150301_start start
+  def start
+    m5_20150301_start
+    @command_window.x += 6
+    @command_window.y += 6
+    @gold_window.x += 6
+    @gold_window.y -= 6
+    @actor_window = Window_M5ActorStatus20150301.new
+  end
+  def create_status_window
+  end
+end
+class Window_M5ActorStatus20150301 < Window_Base
+  def initialize
+    super(200,200,160,100)
+  end
+end</pre>
+  <p>（待续...）</p>
+<script>
+  sh_highlightDocument()
+</script>
