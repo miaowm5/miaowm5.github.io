@@ -1,27 +1,3 @@
-<script>
-  function random_game(){
-    if ( $("#game_ad").attr("showing") == 1) { return }
-    $("#game_ad").attr("showing",1)
-    var now_show = $("#game_ad").attr("now_show")
-    if( now_show > -1 ){
-      $("#game_ad .game_content:eq("+now_show+")").fadeOut(300,function(){
-        show_new_game(now_show)
-      })
-    }
-    else{ show_new_game(now_show) }
-  }
-  function show_new_game(now_show){
-    var index
-    do {
-      index = RandNumMax( $("#game_ad .game_content").length )
-    } while (index == now_show);
-    $("#game_ad").attr("now_show",index)
-    $("#game_ad .game_content:eq("+index+")").fadeIn(300,function(){
-      $("#game_ad").attr("showing",0)
-    })
-  }
-</script>
-
 <div id="game_ad" now_show="-1">
 
 <table border="0" cellpadding="0" cellspacing="0">
@@ -52,7 +28,7 @@
     <p>“去寻找被我取走后分散在房间各处的你的记忆吧。”</p>
     <p>以这句稍微有些奇怪又略微有些恐怖的台词作为引子，</p>
     <p>从沉睡中醒来的少女开始在陌生大宅中探险。</p>
-    <p>包含大量文字、对话与困难谜题的另类RM解谜游戏就此登场！</p>
+    <p>包含大量文字与困难谜题的另类RM解谜游戏就此登场！</p>
   </div>
   <div class="game_content hint" hint_text="点击图片打开下载地址">
     <h1>门之世界的旅行者——</h1>
@@ -79,7 +55,7 @@
     <div class="img">
       <a href="http://mw-m5.lofter.com/post/3e94b_1222701" target="_blank"><img src="img/game/5.jpg" /></a>
     </div>
-    <p>在故乡的长椅上，失忆的旅行者费米独自喝着闷酒。</p>
+    <p>在故乡的长椅上，失意的旅行者费米独自喝着闷酒。</p>
     <p>由于离开故乡太长时间，此时此地已经没有人认识他了。</p>
     <p>向着这样的费米搭话的，</p>
     <p>是一名穿着白色连衣裙的少女……</p>
@@ -99,7 +75,7 @@
     <div class="img">
       <a href="http://mw-m5.lofter.com/post/3e94b_5b38928" target="_blank"><img src="img/game/7.jpg" /></a>
     </div>
-    <p>在故乡的长椅上，失忆的旅行者费米独自喝着闷酒。</p>
+    <p>在故乡的长椅上，失意的旅行者费米独自喝着闷酒。</p>
     <p>由于离开故乡太长时间，此时此地已经没有人认识他了。</p>
     <p>向着这样的费米搭话的，是一名穿着白色连衣裙的少女……</p>
     <p>视觉小说《长椅》的多平台通用重制版！</p>

@@ -5,6 +5,7 @@ p{
   width:900px;
   height: 500px;
   text-align: center;
+  margin: auto;
 }
 #loading > img{
   position: relative;
@@ -16,7 +17,6 @@ p{
   width:900px;
   height: 500px;
   box-shadow: 0px 0px 8px;
-  moz-user-select: -moz-none;
   -moz-user-select: none;
   -o-user-select:none;
   -khtml-user-select:none;
@@ -33,7 +33,11 @@ p{
   height: 85px;
   display: none;
   right: 30px;
-  top:30px;
+  top:40px;
+  transition: top 300ms;
+}
+.loading_bulb{
+  top:30px !important;
 }
 #loading_bulb > img{
   position: absolute;
@@ -73,24 +77,7 @@ p{
   line-height: 3em;
   display: none;
 }
-#scroll_bar{
-  position: absolute;
-}
-#scroll_bar > div:first-child{
-  position: relative;
-  background-color:rgb(223,229,165);
-  width: 4px;
-  height:20em;
-  left: 2px;
-  cursor: pointer;
-}
-#scroll_bar > div:first-child + div{
-  position: absolute;
-  top: 13px;
-  background-color:rgb(195,203,144);
-  width: 8px;
-  cursor: pointer;
-}
+
 #url_list{
   position: relative;
   left: 3.5em;
@@ -102,6 +89,9 @@ p{
   font-weight: bold;
   font-size: 2em;
   text-decoration: none;
+}
+#url_list a:hover{
+  color: #f33;
 }
 #url_list > div:first-child {
   height: 9em;
@@ -117,12 +107,13 @@ p{
 #game_ad{
   width: 50em;
   position: relative;
-  top:-4.0em;
+  top:-4.2em;
   left: 2em;
   color: white;
 }
-#game_ad button{
+#game_ad button,#game_ad button:focus{
   background-color:black;
+  background-color:transparent;
   color:white;
   height:35px;
   width:90%;
@@ -131,6 +122,15 @@ p{
   border-right-color:white;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 0.5em;
+  cursor:pointer;
+  outline: none;
+  border-radius: 5px;
+  transition: all 300ms;
+}
+#game_ad button:hover{
+  color:black;
+  background-color:white;
 }
 #game_ad > table{
   text-align: left;
@@ -147,93 +147,23 @@ p{
 #game_ad .game_content .img{
   text-align: center;
 }
+@keyframes game_ad_effect{ 50% { box-shadow: 0px 0px 10px 0px #000;} }
+@-moz-keyframes game_ad_effect{ 50% { box-shadow: 0px 0px 10px 0px #000;} }
+@-webkit-keyframes game_ad_effect{ 50% { box-shadow: 0px 0px 10px 0px #000;} }
+@-o-keyframes game_ad_effect{ 50% { box-shadow: 0px 0px 10px 0px #000;} }
+#game_ad img:hover{
+  box-shadow: 0px 0px 0px 0px #000;
+  animation: game_ad_effect 1s ease;
+  -webkit-animation: game_ad_effect 1s ease;
+  -moz-animation: game_ad_effect 1s ease;
+  -o-animation: game_ad_effect 1s ease;
+}
 #game_ad .game_content p{
   margin-left: 0.5em;
 }
 #game_ad .game_content > h1{
   font-size: 0.9em;
   font-weight: normal;
-}
-#update_list_area{
-  position: absolute;
-  top:4.4em;
-  left: 2em;
-}
-#update_list{
-  position: absolute;
-  height: 20em;
-  left:2em;
-  overflow: hidden;
-  width: 33.5em;
-  font-size: 1em;
-}
-#update_list p{
-  font-size: 1em;
-  font-weight: bold;
-  border-bottom: 1px dotted;
-}
-#update_list a{
-  font-size: 0.9em;
-  color: black;
-  text-decoration: none;
-  font-weight: normal;
-}
-#update_list h2{
-  font-size: 0.8em;
-  font-weight: normal;
-  text-decoration: none;
-  color: grey;
-  margin-left: 2em;
-}
-#update_time{
-  margin-top: 0.1em;
-}
-#article_area{
-  position: absolute;
-  top:4.4em;
-  left: 2em;
-}
-#article{
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  position: absolute;
-  height: 20em;
-  left:2em;
-  overflow: hidden;
-  width: 32.5em;
-}
-#article h1{
-  font-size: 1.5em;
-  border-bottom: 1px dotted;
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
-  margin-top: 0.1em;
-}
-#article p{
-  font-size: 0.9em;
-  text-indent:1.5em;
-  line-height: 2em;
-}
-#article img{
-  width: 90%;
-  box-shadow: 0px 0px 8px;
-}
-#article .img{
-  width: 95%;
-  text-align: center;
-}
-#article .sh_ruby{
-  box-shadow: 0px 0px 10px;
-  moz-user-select: -moz-auto;
-  -moz-user-select: auto;
-  -o-user-select:auto;
-  -khtml-user-select:auto;
-  -webkit-user-select:auto;
-  -ms-user-select:auto;
-  padding-left: 1.5em;
-  line-height: 1.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
 }
 #hire_info{
   width:32.5em;
@@ -255,6 +185,16 @@ p{
   -webkit-user-select:auto;
   -ms-user-select:auto;
   border-bottom: 1px dotted;
+  cursor:text;
+}
+#hire_info span::selection{
+  border-radius: 5px;
+  background-color: red;
+  color: #FFF;
+}
+#hire_info span::-moz-selection{
+  background-color: red;
+  color: #FFF;
 }
 #link_area{
   position: absolute;
@@ -264,6 +204,12 @@ p{
 #link_area img{
   margin-right: 1.5em;
   cursor: pointer;
+  margin-bottom: 0px;
+  transition: all 300ms;
+  opacity: 0.6;
+}
+#link_area img:hover{
+  opacity: 1.0;
 }
 #footer{
   text-align: center;

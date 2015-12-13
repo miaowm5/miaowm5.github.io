@@ -6,7 +6,7 @@
 // @author       Miaowm5
 // @include      /^http://erogetrailers.com/video/(\d+)$/
 // @grant        none
-// 
+//
 // ==/UserScript==
 
 function check_ready(times){
@@ -21,8 +21,8 @@ function check_ready(times){
         top.location = url
     }
     else if ( times > 60){ console.log('time_out') }
-    else{ 
-        console.log("check_again")        
+    else{
+        console.log("check_again")
         setTimeout(function(){check_ready(times+1)} ,1000)
     }
 }

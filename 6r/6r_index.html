@@ -6,13 +6,16 @@
   <script type="text/javascript">
     !window.jQuery && document.write('<script src="jquery-1.11.2.min.js"><\/script>');
   </script>
-  <script src='main.js'></script>
-  <link rel="stylesheet" type="text/css" href="style_new.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <div id="preload" style="display:none">
+    <img src="img/bulb.png"><img src="img/frame1.jpg"><img src="img/frame2.jpg">
+    <img src="img/frame3.jpg">
+  </div>
   <div id="loading"><img src="img/loading.gif" /></div>
-  <div id="viewport">
-    <div id="content">
+  <div id="viewport"><div id="content">
+
     <div id="hint_area"></div>
     <div id="error_area">
       _(:з」∠)_<br>
@@ -26,17 +29,21 @@
         hint_text = "返回首页，就是那个只有两个链接的空旷页面" />
       <img src="img/game_ico.png" class ='hint' id="game_button"
         hint_text = "我做了一些游戏，不试着来玩玩看吗？" />
-      <img src="img/new_ico.png" class ='hint' id="list_button"
-        hint_text = "这里列出了博客最近的一系列更新" />
       <img src="img/hire_ico.png" class ='hint' id="hire_button"
         hint_text = "如果需要付费找我定制脚本，请点击这里" />
+      <img src="img/music_ico.png" class ='hint' id="music_button"
+        hint_text = "如果想知道空间的背景音乐是什么，点我" />
     </div>
     <div id="loading_bulb"><img src="img/loading.gif" /></div>
+
   </div></div>
   <div id="footer">
     <p>&copy; Created By Mwm5(2015) All Rights Reserved.</p>
   </div>
-  <embed src="http://www.xiami.com/widget/43732468_1769462115,1769462114,1769462099,1770390433,1771224491,1769701056,1770390432,1769701053,1770390434,1769605543,_235_346_FF8719_494949_1/multiPlayer.swf" type="application/x-shockwave-flash" width="1" height="1" wmode="opaque"></embed>
+  <div id="music"></div>
+
+  <script src='main.js'></script>
+
 </body>
 </html>
 
