@@ -1,7 +1,7 @@
 callback({
   "base":[
     { "name":"基础脚本","describe":"",
-      "time":"20150706", "update_info":"删除、增加、调整部分代码",
+      "time":"20151221", "update_info":"删除实用性较差的代码，添加部分新代码",
       "url":"13513" }
   ],
   "message":[
@@ -137,6 +137,9 @@ callback({
       "url":"12770" }
   ],
   "battle":[
+    { "name":"地图作为战斗背景","describe":"",
+      "time":"20151221", "update_info":"不再需要基础脚本，修正可能的内存溢出BUG",
+      "url":"12133" },
     { "name":"记录敌人击杀数","describe":"",
       "time":"20151115", "update_info":"公开",
       "url":"14685" },
@@ -146,9 +149,6 @@ callback({
     { "name":"☆战斗回合数显示","describe":"",
       "time":"20150519", "update_info":"修正地图显示变量脚本造成的BUG",
       "url":"11956" },
-    { "name":"☆地图作为战斗背景","describe":"",
-      "time":"20150211", "update_info":"调整代码，增强兼容性，功能增加",
-      "url":"12133" },
     { "name":"随机战斗渐变图","describe":"",
       "time":"20150211", "update_info":"调整代码，增强兼容性",
       "url":"11623" },
@@ -166,6 +166,9 @@ callback({
       "url":"11572" }
   ],
   "menu":[
+    { "name":"菜单子界面不隐藏选项窗口","describe":"",
+      "time":"20151221", "update_info":"不再需要基础脚本",
+      "url":"13837" },
     { "name":"菜单中的系统指令合并","describe":"",
       "time":"20150629", "update_info":"调整代码，提升兼容性",
       "url":"12708" },
@@ -181,9 +184,6 @@ callback({
     { "name":"物品菜单简化","describe":"",
       "time":"20150322", "update_info":"提升兼容性，功能增强",
       "url":"12247" },
-    { "name":"☆菜单子界面不隐藏选项窗口","describe":"",
-      "time":"20150211", "update_info":"调整代码",
-      "url":"13837" },
     { "name":"☆隐藏物品/装备/技能","describe":"",
       "time":"20150131", "update_info":"调整代码，功能增强",
       "url":"11860" },
@@ -227,6 +227,9 @@ callback({
       "url":"13007" }
   ],
   "others":[
+    { "name":"跳过标题画面","describe":"",
+      "time":"20151230", "update_info":"公开",
+      "url":"14771" },
     { "name":"存档名字修改","describe":"",
       "time":"20151202", "update_info":"公开",
       "url":"14719" },
