@@ -1,15 +1,5 @@
  // This script is used for list.html
 
-siteGlobal.flashEvent = null;
-siteGlobal.showUpdateHint = function(){
-  document.title = '【更新】喵呜喵5的原创脚本列表'
-  siteGlobal.flashEvent = setTimeout("siteGlobal.hideUpdateHint()",600)
-};
-siteGlobal.hideUpdateHint = function(){
-  document.title = '【　　】喵呜喵5的原创脚本列表'
-  siteGlobal.flashEvent = setTimeout("siteGlobal.showUpdateHint()",600)
-};
-
 (function (){
 
   function loadJson(){
@@ -67,12 +57,13 @@ siteGlobal.hideUpdateHint = function(){
         if ( $.cookie("last_visit") ) {
           if ( uptime > $.cookie("last_visit") ){
             $("#list .update_hint").show()
-            siteGlobal.showUpdateHint()
+            document.title = "【更新】喵呜喵5的原创脚本列表"
+            siteGlobal.favicon.badge(result[time_index].length)
           }
         }else{ $.cookie("last_visit",uptime,{ expires: 365 }) }
         $("#list .update_hint").click(function(){
-          clearTimeout(siteGlobal.flashEvent)
-          document.title = '喵呜喵5的原创脚本列表'
+          document.title = "喵呜喵5的原创脚本列表"
+          siteGlobal.favicon.reset()
           $.cookie("last_visit",uptime,{ expires: 365 })
           $("#list .update_hint").hide()
         })
@@ -91,28 +82,12 @@ siteGlobal.hideUpdateHint = function(){
     })
   }
   function setCommentBox(){
-    var width = window.innerWidth || document.documentElement.clientWidth;
-    $('#wap-comment').attr('href', 'wap_comment.html?sid=' + siteGlobal.articleID)
-    if (width < 500) return
-    $('#SOHUCS').attr('sid', siteGlobal.articleID)
-    var appid = siteGlobal.commentAppid
-    var conf = siteGlobal.commentConf
-    var readyFunction = function(){ window.changyan.api.config({ appid: appid, conf: conf }) }
-    var ele = document.createElement("script")
-    ele.setAttribute("type","text/javascript")
-    ele.setAttribute("charset","UTF-8")
-    ele.setAttribute("src","http://changyan.sohu.com/upload/changyan.js")
-    if(window.attachEvent){
-      ele.onreadystatechange = function(){
-        var state = b.readyState;
-        if(state === "loaded" || state === "complete"){
-          b.onreadystatechange = null;
-          readyFunction()
-        }
-      }
-    }
-    else ele.onload = readyFunction
-    $('head')[0].appendChild(ele)
+    $('.ds-thread').attr('data-thread-key', siteGlobal.articleID)
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
   }
 
   loadJson()

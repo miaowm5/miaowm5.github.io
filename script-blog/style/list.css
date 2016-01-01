@@ -136,22 +136,7 @@ body{
   margin-left: .5em;
 }
 
-#comment .pc-comment.card{ padding: 1.5em 3em; }
-#comment .jump-2-wap{ display: none; }
-#comment .jump-2-wap.card{
-  padding: 2em 1em;
-  text-align: center;
-}
-#comment .jump-2-wap.card a{
-  color: #7563EA;
-  border-radius: 3px;
-  padding: .5em 3em;
-  border: 1px solid;
-}
-#comment .jump-2-wap.card a:hover{
-  color: white;
-  background-color: #7563EA;
-}
+#comment .card{ padding: 2em 3em; }
 
 #header{
   padding: 0em 1.5em;
@@ -201,7 +186,8 @@ body{
     border-radius: 0px;
   }
   .viewport{ max-width:2000px; }
-  #content>div{ padding: 2em 1.5em 0em; }
+  #content>div,#comment .card{ padding: 2em 1.5em 0em; }
+  #comment .card{ padding-bottom: 2em; }
   #rule .card{ padding: 3em 2em; }
   #rule .rule-list li{ text-indent: 1em; }
   #list .show_area.card{ padding: 2em 3em 1em; }
@@ -210,8 +196,6 @@ body{
   #list .show_area.card{ padding: 1.5em 1.5em; }
   #list h2:hover,.no-rgba #list h2:hover{ background: #ddd; }
   #rule img, .card, #list .update_hint{ transition: none; }
-  #comment .jump-2-wap{ display: block; }
-  #comment .pc-comment{ display: none; }
   #footer{
     margin-top: 4em;
     margin-bottom: 4em;

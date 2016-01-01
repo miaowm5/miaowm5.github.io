@@ -5,15 +5,15 @@ callback({
       "url":"13513" }
   ],
   "message":[
+    { "name":"对话框内显示选项","describe":"",
+      "time":"20160101", "update_info":"修正无对话框下显示选项时报错的BUG",
+      "url":"11948" },
     { "name":"头像批量修改","describe":"",
       "time":"20151022", "update_info":"调整非严厉模式下脚本代码，防止恶性BUG",
       "url":"13539" },
     { "name":"自动换行","describe":"",
       "time":"20150704", "update_info":"删除兼容性较差的功能",
       "url":"11571" },
-    { "name":"对话框内显示选项","describe":"",
-      "time":"20150628", "update_info":"修正BUG，提升兼容性",
-      "url":"11948" },
     { "name":"选项指令合并","describe":"",
       "time":"20150628", "update_info":"提升与对话框内显示选项脚本的兼容",
       "url":"13683" },
