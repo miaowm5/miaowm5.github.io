@@ -14,14 +14,17 @@
       $('#list .script-list').show()
       $('#list .script-load').hide()
     }
-    $.ajax({
-      url: "list.json",
-      type: "get",
+    var ajaxConfig = {
+      url: "http://miaowm5.gitcafe.io/script-blog/list.json",
       dataType: "jsonp",
       jsonp: "callback",
       jsonpCallback:"callback",
-      success: mainFunction
-    });
+      success: mainFunction,
+    }
+    $.ajax(ajaxConfig).fail(function(p1,p2,p3){
+      ajaxConfig.url = "http://miaowm5.github.io/script-blog/list.json"
+      $.ajax(ajaxConfig)
+    })
   }
   function drawScript(data, dom){
     var text = [

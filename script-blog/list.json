@@ -52,6 +52,9 @@ callback({
       "url":"13214" }
   ],
   "map":[
+  { "name":"移动路径指令加强","describe":"",
+      "time":"20160114", "update_info":"重写代码，梳理代码逻辑",
+      "url":"11974" },
     { "name":"共同移动","describe":"",
       "time":"20151202", "update_info":"调整代码，功能增强",
       "url":"13465" },
@@ -97,9 +100,6 @@ callback({
     { "name":"放大淡出","describe":"",
       "time":"20140710", "update_info":"公开",
       "url":"13493" },
-    { "name":"移动路径指令加强","describe":"",
-      "time":"20140611", "update_info":"增加各种各样的功能",
-      "url":"11974" },
     { "name":"获取角色在队伍中的位置 + 快速踢人","describe":"",
       "time":"20140502", "update_info":"新增各种踢法",
       "url":"12642" }
@@ -227,6 +227,9 @@ callback({
       "url":"13007" }
   ],
   "others":[
+    { "name":"★公共事件转换为特殊界面","describe":"",
+      "time":"20160102", "update_info":"修正场所移动等地图指令卡死的BUG",
+      "url":"13692" },
     { "name":"跳过标题画面","describe":"",
       "time":"20151230", "update_info":"公开",
       "url":"14771" },
@@ -242,9 +245,6 @@ callback({
     { "name":"标题画面背景滚动","describe":"",
       "time":"20151106", "update_info":"公开",
       "url":"14650" },
-    { "name":"★公共事件转换为特殊界面","describe":"",
-      "time":"20150901", "update_info":"代码调整，修正BUG，功能增强",
-      "url":"13692" },
     { "name":"读档后执行公共事件","describe":"",
       "time":"20150720", "update_info":"公开",
       "url":"14365" },

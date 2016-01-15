@@ -34,15 +34,11 @@ if (!Array.prototype.index) {
 // siteGlobal
 function siteGlobal(){}
 var duoshuoQuery = {short_name:"miaowm5"};
-siteGlobal.loadErrorEvent = null
 siteGlobal.favicon = new Favico({ animation:'fade' })
-
 // loadPublicPage
 siteGlobal.loadPublicPage = function(){
-  siteGlobal.loadErrorEvent = setTimeout("$('#loading .load-hint').show()", 1000)
   $('#footer').load('public.html #footer>div')
   $('#header').load('public.html #header>div',function(){
-    clearTimeout(siteGlobal.loadErrorEvent)
     $('#loading').fadeOut(300, function(){ $('#content').fadeIn(300) })
   })
 }
