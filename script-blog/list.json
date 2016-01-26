@@ -1,7 +1,7 @@
 callback({
   "base":[
     { "name":"基础脚本","describe":"",
-      "time":"20151221", "update_info":"删除实用性较差的代码，添加部分新代码",
+      "time":"20160125", "update_info":"调整读取备注的代码",
       "url":"13513" }
   ],
   "message":[
@@ -52,7 +52,10 @@ callback({
       "url":"13214" }
   ],
   "map":[
-  { "name":"移动路径指令加强","describe":"",
+    { "name":"☆死亡时行走图改变","describe":"",
+      "time":"20160119", "update_info":"简化代码，提升兼容性",
+      "url":"13514" },
+    { "name":"移动路径指令加强","describe":"",
       "time":"20160114", "update_info":"重写代码，梳理代码逻辑",
       "url":"11974" },
     { "name":"共同移动","describe":"",
@@ -91,9 +94,6 @@ callback({
     { "name":"足音","describe":"",
       "time":"20140821", "update_info":"公开",
       "url":"13587" },
-    { "name":"☆死亡时行走图改变","describe":"",
-      "time":"20140721", "update_info":"公开",
-      "url":"13514" },
     { "name":"地图卷动频率修改","describe":"",
       "time":"20140715", "update_info":"公开",
       "url":"13506" },
@@ -105,6 +105,9 @@ callback({
       "url":"12642" }
   ],
   "system":[
+    { "name":"☆分解系统","describe":"",
+      "time":"20160125", "update_info":"公开",
+      "url":"14828" },
     { "name":"书籍系统","describe":"",
       "time":"20151120", "update_info":"书籍翻页增加图片移动模式",
       "url":"14681" },
@@ -166,6 +169,9 @@ callback({
       "url":"11572" }
   ],
   "menu":[
+    { "name":"自定义技能名字","describe":"",
+      "time":"20160119", "update_info":"重写代码，功能增强",
+      "url":"13374" },
     { "name":"菜单子界面不隐藏选项窗口","describe":"",
       "time":"20151221", "update_info":"不再需要基础脚本",
       "url":"13837" },
@@ -190,9 +196,6 @@ callback({
     { "name":"物品排序","describe":"",
       "time":"20140807", "update_info":"公开",
       "url":"13543" },
-    { "name":"自定义技能名字","describe":"",
-      "time":"20140513", "update_info":"公开",
-      "url":"13374" },
     { "name":"能够遗忘技能的道具","describe":"",
       "time":"20140329", "update_info":"公开",
       "url":"12821" },
@@ -201,6 +204,9 @@ callback({
       "url":"12326" }
   ],
   "event":[
+    { "name":"事件指令功能加强","describe":"",
+      "time":"20160125", "update_info":"功能增加",
+      "url":"12653" },
     { "name":"事件计时器","describe":"",
       "time":"20151117", "update_info":"修正存档时计时器消失的BUG，增加大量新功能",
       "url":"14495" },
@@ -210,9 +216,6 @@ callback({
     { "name":"Case","describe":"",
       "time":"20150804", "update_info":"修正读取存档时出错的BUG",
       "url":"13466" },
-    { "name":"事件指令功能加强","describe":"",
-      "time":"20150804", "update_info":"不再强制要求基础脚本，功能增加",
-      "url":"12653" },
     { "name":"批量导入脚本","describe":"",
       "time":"20140614", "update_info":"公开",
       "url":"13461" },

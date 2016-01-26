@@ -28,7 +28,7 @@
   }
   function drawScript(data, dom){
     var text = [
-      '<a href="http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=',
+      '<a class="normal-link" href="http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=',
       data.url + '" target="_blank">',
       data.name + '</a>',
       '<span class="update_info"> (',
@@ -72,7 +72,7 @@
         })
         $(".update_time").append(time_string)
       }
-      listArea.find(".show_area").append('<h3>' + time_string + '</h3><ul></ul>')
+      listArea.find(".show_area").append('<h3 class="card-inline-title">' + time_string + '</h3><ul></ul>')
       var dom = listArea.find(".show_area ul:eq(" + time_index + ")")
       $.each(result[time_index], function(script_index, script){ drawScript(script, dom) })
     })
@@ -84,18 +84,10 @@
       $(this).parent().find(".show_area").slideToggle()
     })
   }
-  function setCommentBox(){
-    $('.ds-thread').attr('data-thread-key', siteGlobal.articleID)
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-  }
 
   loadJson()
   setShowArea()
   siteGlobal.loadPublicPage()
-  setCommentBox()
+  siteGlobal.setCommentBox()
 
 })()
