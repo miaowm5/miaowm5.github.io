@@ -68,6 +68,11 @@ body{
 #content>div{
   padding: 2em 3em 0em;
 }
+a>img{
+  opacity: .8;
+  transition: all 0.1s;
+}
+a>img:hover{ opacity: 1.0; }
 
 #loading{
   text-align: center;
@@ -190,6 +195,7 @@ a.normal-link:hover{
 }
 @media screen and (max-width: 600px) {
   body{ font-size: 12px; }
+  a>img{ transition: none; }
   #content>div{ padding: 2em .5em 0em; }
   .toggle-button:hover{ background: #ddd; }
   .card{

@@ -5,6 +5,9 @@ callback({
       "url":"13513" }
   ],
   "message":[
+    { "name":"防止错按选项","describe":"",
+      "time":"20160214", "update_info":"修正超过两个选项时按上键选择位置出错的问题",
+      "url":"13655" },
     { "name":"对话框内显示选项","describe":"",
       "time":"20160101", "update_info":"修正无对话框下显示选项时报错的BUG",
       "url":"11948" },
@@ -41,9 +44,6 @@ callback({
     { "name":"超过四行的显示文字指令","describe":"",
       "time":"20141206", "update_info":"调整代码",
       "url":"13703" },
-    { "name":"防止错按选项","describe":"",
-      "time":"20141206", "update_info":"调整代码",
-      "url":"13655" },
     { "name":"竖排显示对话","describe":"",
       "time":"20141206", "update_info":"调整代码",
       "url":"13530" },
@@ -140,6 +140,9 @@ callback({
       "url":"12770" }
   ],
   "battle":[
+    { "name":"☆技能冷却","describe":"",
+      "time":"20160131", "update_info":"修正战斗结束的回合技能冷却时间不计算的BUG",
+      "url":"14838" },
     { "name":"地图作为战斗背景","describe":"",
       "time":"20151221", "update_info":"不再需要基础脚本，修正可能的内存溢出BUG",
       "url":"12133" },

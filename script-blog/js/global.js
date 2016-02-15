@@ -35,13 +35,38 @@ if (!Array.prototype.index) {
 function siteGlobal(){}
 var duoshuoQuery = {short_name:"miaowm5"};
 siteGlobal.favicon = new Favico({ animation:'fade' })
+siteGlobal.loadState = 0
 // loadPublicPage
 siteGlobal.loadPublicPage = function(){
-  $('#footer').load('public.html #footer>div')
-  $('#header').load('public.html #header>div',function(){
-    $('#loading').fadeOut(300, function(){ $('#content').fadeIn(300) })
-  })
+  $('#footer').html([
+    '<div>',
+      '<p>This page is designed by miaowm5(2016)</p>',
+      '<a href="http://www.pixiv.net/member_illust.php?mode=medium&illust_id=54103699" target="_blank">',
+        'Banner Picture: 暮明♨二日目J30b',
+      '</a>',
+    '</div>'
+  ].join(''))
+  $('#header').html([
+    '<div>',
+      '<h1>喵呜喵5的原创脚本列表</h1>',
+      '<ul>',
+        '<li><a href="http://rm.66rpg.com/?291206">返回空间</a></li>',
+        '<li><a href="list.html">脚本列表</a></li>',
+        '<li><a href="order.html">脚本定制</a></li>',
+      '</ul>',
+    '</div>',
+  ].join(''))
+  siteGlobal.loadState += 1
 }
+// checkLoad
+siteGlobal.checkLoad = function(targetState){
+  console.log(targetState)
+  if(siteGlobal.loadState >= targetState){
+    $('#loading').fadeOut(300, function(){ $('#content').fadeIn(300) })
+  }
+  else{ setTimeout(function(){siteGlobal.checkLoad(targetState)}, 1000) }
+}
+// setCommentBox
 siteGlobal.setCommentBox = function(){
   $('.ds-thread').attr('data-thread-key', siteGlobal.articleID)
   var ds = document.createElement('script');

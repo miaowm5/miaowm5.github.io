@@ -3,6 +3,7 @@
 (function (){
 
   function loadJson(){
+    siteGlobal.showUpdate = true
     var mainFunction = function(data){
       var list = ['base','message','map','event','system','battle','menu','others']
       for(var i = 0; i < list.length; i++){
@@ -10,18 +11,22 @@
         var dom = $('#list .' + cate + ' .show_area>ul') // $('#list .base .show_area>ul')
         for (var j = 0; j < data[cate].length; drawScript(data[cate][j], dom), j++){}
       }
-      drawUpdateList(data,6)
+      if (siteGlobal.showUpdate){ drawUpdateList(data,6) }
       $('#list .script-list').show()
       $('#list .script-load').hide()
+      siteGlobal.loadState += 1
     }
     var ajaxConfig = {
       url: "http://miaowm5.gitcafe.io/script-blog/list.json",
       dataType: "jsonp",
       jsonp: "callback",
       jsonpCallback:"callback",
+      timeout: 2000,
       success: mainFunction,
     }
     $.ajax(ajaxConfig).fail(function(p1,p2,p3){
+      $('html').addClass('no-update')
+      siteGlobal.showUpdate = false
       ajaxConfig.url = "http://miaowm5.github.io/script-blog/list.json"
       $.ajax(ajaxConfig)
     })
