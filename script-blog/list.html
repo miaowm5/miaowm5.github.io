@@ -36,9 +36,9 @@
     #list .update_hint p.hover{ display: none; }
     #list .update_hint:hover p.no-hover{ display: none; }
     #list .update_hint:hover p.hover{ display: inline; }
-    #list .script-list{ display: none }
     #list .show_area.card{ margin: 1.5em 0em; }
     #list .show_area.card ul{ line-height: 3; }
+    #list li>a.base-script:before{ content: "☆"; }
     #list .show_area .update_info{
       font-size: 0.9em;
       color: #999;
@@ -107,7 +107,6 @@
         </div>
       </div>
 
-      <div class="script-load card">脚本列表加载中...</div>
       <div class="script-list">
         <div class="last_update"><h2 class="toggle-button">更新记录</h2><div class="show_area card"></div></div>
         <div class="base"><h2 class="toggle-button">基础脚本</h2><div class="show_area card"><ul></ul></div></div>

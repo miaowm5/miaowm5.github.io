@@ -60,7 +60,6 @@ siteGlobal.loadPublicPage = function(){
 }
 // checkLoad
 siteGlobal.checkLoad = function(targetState){
-  console.log(targetState)
   if(siteGlobal.loadState >= targetState){
     $('#loading').fadeOut(300, function(){ $('#content').fadeIn(300) })
   }

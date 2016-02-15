@@ -42,9 +42,13 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
   padding-left: 0 !important;
 }
 #ds-reset .ds-inline-replybox .ds-avatar{display: none !important;}
-
 @media screen and (max-width: 500px) {
-  #ds-reset .ds-textarea-wrapper textarea,#ds-reset .ds-comment-body p{font-size:12px !important;}
+  #ds-reset .ds-textarea-wrapper textarea,
+  #ds-reset .ds-login-buttons p,
+  #ds-reset .ds-login-buttons li>a,
+  #ds-reset .ds-comment-body p, #ds-reset .ds-comment-body .ds-user-name{
+    font-size:12px !important;
+  }
   #ds-reset .ds-avatar, #ds-reset .ds-replybox .ds-avatar{display: none !important;}
   #ds-reset .ds-replybox{padding-left: 0 !important;}
   #ds-reset .ds-comment-body{padding-left:0 !important;}
@@ -64,6 +68,7 @@ body{
 .viewport{
   max-width:1024px;
   margin: auto;
+  overflow: hidden;
 }
 #content>div{
   padding: 2em 3em 0em;
