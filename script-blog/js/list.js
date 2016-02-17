@@ -5,21 +5,41 @@
   function timeString(time){
     return [time.substr(0,4), time.substr(4,2) - 0, time.substr(6) - 0].join('.')
   }
+  function changeTo6R(){
+    $('#list').removeClass('github')
+    $('#list').addClass('rm6r')
+    $('#list .show_area li a').each(function(){
+      $(this).attr('href',
+        'http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=' +
+        $(this).attr('data-rm6r')
+      )
+    })
+  }
+  function changeToGithub(){
+    $('#list').removeClass('rm6r')
+    $('#list').addClass('github')
+    $('#list .show_area li a').each(function(){
+      if ($(this).hasClass('no-github')){
+        $(this).removeAttr('href')
+        return true
+      }
+      var url = 'script.html?github=' + $(this).attr('data-github')
+      url += '&rm6r=' + $(this).attr('data-rm6r')
+      if ($(this).hasClass('base-script')){ url += '&base=1' }
+      $(this).attr('href',url)
+    })
+  }
   function loadJson(){
     siteGlobal.showUpdate = true
     var mainFunction = function(data){
-      var list = ['base','message','map','event','system','battle','menu','others']
+      var list = ['base','message','map','system','battle','menu','event','others']
       $.each(list, function(i,cate){
         var dom = $('#list .' + cate + ' .show_area>ul')
         $.each(data[cate], function(_, script){ drawScript(script, dom, i) })
       })
       if (siteGlobal.showUpdate){ drawUpdateList(data,6) }
-      $('#list .show_area li a').each(function(){
-        $(this).attr('href',
-          'http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=' +
-          $(this).attr('rm6r_url')
-        )
-      })
+      setShowArea()
+      useSetting()
       siteGlobal.loadState += 1
     }
     var ajaxConfig = {
@@ -39,24 +59,21 @@
     })
   }
   function drawScript(data, dom, cate){
-    cate = ['','Message/','Map/','Events/','Systems/','Battle/','Menu/','Others/'][cate]
-    var aDom = $(document.createElement('a'))
-    aDom.addClass('normal-link')
-    if(data.base)   { aDom.addClass('base-script') }
-    if(typeof(data.github)=="undefined") { aDom.addClass('no-github') }
+    cate = ['','Message/','Map/','Systems/','Battle/','Menu/','Events/','Others/'][cate]
+    var aDom = $('<a target="_blank" class="normal-link">' + data.name + '</a>')
     aDom.attr({
-      'rm6r_url': data.url,
-      'github_url': cate + data.name + '.rb',
-      'target': '_blank'
+      'data-rm6r': data.url, 'data-github': siteGlobal.encode(cate + data.name + '.rb')
     })
-    aDom.html(data.name)
-    dom.append([
-      '<li>', aDom.prop('outerHTML'),
-        '<span class="update_info">(',
-        timeString(data.time),' ',
-        data.update_info + ')</span>',
-      '</li>'
-    ].join(''))
+    var liDom = $('<li></li>')
+    liDom.append(aDom)
+    liDom.append($([
+      '<span class="update_info">(',
+      timeString(data.time),' ',
+      data.update_info + ')</span>'
+    ].join('')))
+    if(data.base) { liDom.addClass('base-script') }
+    if(typeof(data.github)=="undefined") { liDom.addClass('no-github') }
+    dom.append(liDom)
   }
   function drawUpdateList(data,amount){
     var time = [],result = []
@@ -107,10 +124,51 @@
       $(this).parent().find(".show_area").slideToggle()
     })
   }
+  function setting(setID, state){
+    var dom = $('#setting .switch_button[data-setting='+ setID +']')
+    if (typeof(state) == "undefined") { return }
+    switch(setID){
+    case 1:
+      if(state){ changeToGithub() }
+      else     { changeTo6R() }
+      break
+    case 2:
+      if(state){ $('#list').addClass('filter-base') }
+      else     { $('#list').removeClass('filter-base') }
+      break
+    }
+    if(state){ dom.addClass('open') }
+    else     { dom.removeClass('open') }
+  }
+  function useSetting(){
+    var saveSetting = function(setID, value){
+      if(value){ $.cookie("setting" + setID, '1') }
+      else{ $.cookie("setting" + setID, '0') }
+    }
+    $('#setting .switch_button').click(function(){
+      var setID = $(this).attr('data-setting') - 0
+      var value = !$(this).hasClass('open')
+      setting(setID, value)
+      saveSetting(setID, value)
+    })
+    if ( $.cookie("setting0") && ($.cookie("setting0") - 0) ){
+      $.each([1,2],function(_, id){
+        if (!$.cookie("setting" + id)){ return true }
+        setting(id, ($.cookie("setting" + id) - 0) )
+      })
+      $('#setting .switch_button[data-setting=0]').addClass('open')
+    }
+    else{
+      $.each([1,2], function(_, id){ $.cookie("setting" + id, null) })
+      $("#setting .show_area").show()
+      setting(1, false)
+    }
+  }
 
   loadJson()
-  setShowArea()
   siteGlobal.loadPublicPage()
+  siteGlobal.articleID = 1
   siteGlobal.setCommentBox()
+  siteGlobal.checkLoad(2)
 
 })()

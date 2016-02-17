@@ -8,7 +8,6 @@
   <link rel="stylesheet" type="text/css" href="style/global.css">
   <script src='js/modernizr.js'></script>
   <style>
-    #content{ display: none; }
     #rule .image-list{
       text-align: center;
       margin: 1em 0;
@@ -38,19 +37,19 @@
     #list .update_hint:hover p.hover{ display: inline; }
     #list .show_area.card{ margin: 1.5em 0em; }
     #list .show_area.card ul{ line-height: 3; }
-    #list li>a.base-script:before{ content: "☆"; }
+    #setting .setting>.hint{ color: #999; }
+    #setting .setting>.hint{ margin-bottom: 1.5em; }
+    #list li.base-script>a:before{ content: "☆"; }
     #list .show_area .update_info{
       font-size: 0.9em;
       color: #999;
       margin-left: .5em;
     }
-    @media screen and (max-width: 1050px) {
-      #rule .rule-list li{ text-indent: 0em; }
-    }
-    @media screen and (max-width: 600px) {
-      #list .update_hint{ transition: none; }
-    }
+    @media screen and (max-width: 1050px) { #rule .rule-list li{ text-indent: 0em; } }
+    @media screen and (max-width: 600px) { #list .update_hint{ transition: none; } }
     .no-update #list .last_update,.no-update #list .update_info{ display: none; }
+    #list.github .no-github{ display: none; }
+    #list.filter-base .base-script{display: none;}
   </style>
 </head>
 <body>
@@ -63,84 +62,110 @@
     </p>
   </div></div>
 
-  <div id="content" class="viewport">
-
+  <div id="content">
     <header id="header"></header>
-
-    <div id="rule">
-      <div class="big-title">
-        <h1>脚本使用规约</h1>
-        <p class="title-hint">使用我的脚本即表示您已同意并将遵守如下规定。</p>
-      </div>
-      <div class="card">
-        <div class="image-list">
-          <a href="http://rmtemp.lofter.com/post/3e26fe_156e50a" target="_blank">
-            <img src="img/rule/1.jpg" alt="基本规则-点击查看详情" /></a>
-          <a href="http://rmtemp.lofter.com/post/3e26fe_156f11b" target="_blank">
-            <img src="img/rule/2.jpg" alt="自由的用于任何游戏中-点击查看详情" /></a>
-          <a href="http://rmtemp.lofter.com/post/3e26fe_156f16f" target="_blank">
-            <img src="img/rule/3.jpg" alt="不需要报告-点击查看详情" /></a>
-          <a href="http://rmtemp.lofter.com/post/3e26fe_156e513" target="_blank">
-            <img src="img/rule/4.jpg" alt="不需要署名-点击查看详情" /></a>
-          <a href="http://rmtemp.lofter.com/post/3e26fe_156f131" target="_blank">
-            <img src="img/rule/5.jpg" alt="允许加工-点击查看详情" /></a>
-          <a href="http://rmtemp.lofter.com/post/3e26fe_156f1c7" target="_blank">
-            <img src="img/rule/6.jpg" alt="允许自由的二次配布-点击查看详情" /></a>
+    <div class="viewport">
+      <div id="rule">
+        <div class="big-title">
+          <h1>脚本使用规约</h1>
+          <p class="title-hint">使用我的脚本即表示您已同意并将遵守如下规定。</p>
         </div>
-        <ul class="rule-list">
-          <li>用于收费游戏或者参加比赛的游戏中时要求署名（署名格式：喵呜喵5）。</li>
-          <li>如果免费游戏附带有使用的素材列表的话（例如在游戏ED、游戏介绍文档、游戏发布帖中）则要求署名（署名格式：喵呜喵5）。</li>
-          <li>脚本开头的说明中如果有特殊的使用协议的话，以脚本说明中的使用协议为准。</li>
-          <li>禁止以脚本合集的方式转载我的脚本。</li>
-          <li>在未说明的情况下，这些脚本只适用于RPG制作大师VA的默认工程。在使用脚本过程中遇到了任何问题请将问题详情在对应脚本的下方进行回复。</li>
-          <li>对于那些已经被我删除的脚本，你可以自由的使用而不需要遵守上述规约。</li>
-        </ul>
-      </div>
-    </div>
-    <div id="list">
-      <div class="big-title">
-        <h1>脚本列表</h1>
-        <p class="title-hint">标注☆号的脚本必须加入基础脚本后才能使用，标注★号的脚本拥有特殊的使用规约，请事先进行确认。</p>
-        <div class="update_hint">
-          <p class="no-hover"><span class="update_time"></span>更新了哟！</p>
-          <p class="hover">此次更新不再提醒</p>
+        <div class="card">
+          <div class="image-list">
+            <a href="http://rmtemp.lofter.com/post/3e26fe_156e50a" target="_blank">
+              <img src="img/rule/1.jpg" alt="基本规则-点击查看详情" /></a>
+            <a href="http://rmtemp.lofter.com/post/3e26fe_156f11b" target="_blank">
+              <img src="img/rule/2.jpg" alt="自由的用于任何游戏中-点击查看详情" /></a>
+            <a href="http://rmtemp.lofter.com/post/3e26fe_156f16f" target="_blank">
+              <img src="img/rule/3.jpg" alt="不需要报告-点击查看详情" /></a>
+            <a href="http://rmtemp.lofter.com/post/3e26fe_156e513" target="_blank">
+              <img src="img/rule/4.jpg" alt="不需要署名-点击查看详情" /></a>
+            <a href="http://rmtemp.lofter.com/post/3e26fe_156f131" target="_blank">
+              <img src="img/rule/5.jpg" alt="允许加工-点击查看详情" /></a>
+            <a href="http://rmtemp.lofter.com/post/3e26fe_156f1c7" target="_blank">
+              <img src="img/rule/6.jpg" alt="允许自由的二次配布-点击查看详情" /></a>
+          </div>
+          <ul class="rule-list">
+            <li>用于收费游戏或者参加比赛的游戏中时要求署名（署名格式：喵呜喵5）。</li>
+            <li>如果免费游戏附带有使用的素材列表的话（例如在游戏ED、游戏介绍文档、游戏发布帖中）则要求署名（署名格式：喵呜喵5）。</li>
+            <li>脚本开头的说明中如果有特殊的使用协议的话，以脚本说明中的使用协议为准。</li>
+            <li>禁止以脚本合集的方式转载我的脚本。</li>
+            <li>在未说明的情况下，这些脚本只适用于RPG制作大师VA的默认工程。在使用脚本过程中遇到了任何问题请将问题详情在对应脚本的下方进行回复。</li>
+            <li>对于那些已经被我删除的脚本，你可以自由的使用而不需要遵守上述规约。</li>
+          </ul>
         </div>
       </div>
+      <div id="list">
+        <div class="big-title">
+          <h1>脚本列表</h1>
+          <p class="title-hint">标注☆号的脚本必须加入基础脚本后才能使用，标注★号的脚本拥有特殊的使用规约，请事先进行确认。</p>
+          <div class="update_hint">
+            <p class="no-hover"><span class="update_time"></span>更新了哟！</p>
+            <p class="hover">此次更新不再提醒</p>
+          </div>
+        </div>
 
-      <div class="script-list">
-        <div class="last_update"><h2 class="toggle-button">更新记录</h2><div class="show_area card"></div></div>
-        <div class="base"><h2 class="toggle-button">基础脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="message"><h2 class="toggle-button">对话类脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="map"><h2 class="toggle-button">地图类脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="event"><h2 class="toggle-button">事件类脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="system"><h2 class="toggle-button">系统类脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="battle"><h2 class="toggle-button">战斗类脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="menu"><h2 class="toggle-button">菜单类脚本</h2><div class="show_area card"><ul></ul></div></div>
-        <div class="others"><h2 class="toggle-button">其他脚本</h2><div class="show_area card"><ul></ul></div></div>
+        <div class="script-list">
+          <div id="setting">
+            <h2 class="toggle-button">脚本设置</h2>
+            <div class="show_area card">
+
+              <div class="setting">
+                <h3 class="card-inline-title">修改数据源</h3>
+                <div class="switch_button" data-setting="1">
+                  <div class="hint"><p>使用 Github</p></div>
+                  <div class="switch-back"><div class="switch-object"></div></div>
+                </div>
+                <div class="hint">
+                  <p>使用 Github 取代 6R 作为脚本的数据源。脚本的读取速度取决于你访问<a class="normal-link" href="https://github.com/" target="_blank">Github</a>的速度。</p>
+                </div>
+              </div>
+
+              <div class="setting">
+                <h3 class="card-inline-title">过滤依赖性脚本</h3>
+                <div class="switch_button" data-setting="2">
+                  <div class="hint"><p>只显示无依赖的脚本</p></div>
+                  <div class="switch-back"><div class="switch-object"></div></div>
+                </div>
+                <div class="hint">
+                  <p>隐藏需要插入基础脚本后才能使用的脚本。</p>
+                </div>
+              </div>
+
+              <div class="setting">
+                <h3 class="card-inline-title">保存偏好设置</h3>
+                <div class="switch_button" data-setting="0">
+                  <div class="hint"><p>自动应用当前设置</p></div>
+                  <div class="switch-back"><div class="switch-object"></div></div>
+                </div>
+                <div class="hint">
+                  <p>将以上设置数据保存到 Cookie 中，下次访问网页时自动应用。</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="last_update"><h2 class="toggle-button">更新记录</h2><div class="show_area card"></div></div>
+          <div class="base"><h2 class="toggle-button">基础脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="message"><h2 class="toggle-button">对话类脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="map"><h2 class="toggle-button">地图类脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="event"><h2 class="toggle-button">事件类脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="system"><h2 class="toggle-button">系统类脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="battle"><h2 class="toggle-button">战斗类脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="menu"><h2 class="toggle-button">菜单类脚本</h2><div class="show_area card"><ul></ul></div></div>
+          <div class="others"><h2 class="toggle-button">其他脚本</h2><div class="show_area card"><ul></ul></div></div>
+        </div>
       </div>
+      <div id="comment"></div>
+      <footer id="footer"></footer>
     </div>
-    <div id="comment">
-      <div class="big-title">
-        <h1>发射言弹</h1>
-        <p class="title-hint">您的留言将被公开展示在这里。</p>
-      </div>
-      <div class="card"><div class="ds-thread"></div></div>
-    </div>
-
-    <footer id="footer"></footer>
-
   </div>
 
   <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-  <!-- <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script> -->
   <script type="text/javascript">
     !window.jQuery && document.write('<script src="js/jquery.js"><\/script>');
   </script>
   <script src='js/global.js'></script>
-  <script>
-    siteGlobal.articleID = 1
-    siteGlobal.checkLoad(2)
-  </script>
   <script src='js/list.js'></script>
 
 </body>

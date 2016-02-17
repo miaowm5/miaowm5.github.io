@@ -102,7 +102,7 @@ callback({
       "url":"12642" }
   ],
   "system":[
-    { "name":"分解系统","describe":"",
+    { "name":"分解道具","describe":"",
       "time":"20160125", "update_info":"公开",
       "url":"14828", "base": true, "github": 0 },
     { "name":"书籍系统","describe":"",

@@ -38,23 +38,23 @@ siteGlobal.favicon = new Favico({ animation:'fade' })
 siteGlobal.loadState = 0
 // loadPublicPage
 siteGlobal.loadPublicPage = function(){
-  $('#footer').html([
-    '<div>',
-      '<p>This page is designed by miaowm5(2016)</p>',
-      '<a href="http://www.pixiv.net/member_illust.php?mode=medium&illust_id=54103699" target="_blank">',
-        'Banner Picture: 暮明♨二日目J30b',
-      '</a>',
-    '</div>'
-  ].join(''))
   $('#header').html([
-    '<div>',
+    '<div class="viewport">',
       '<h1>喵呜喵5的原创脚本列表</h1>',
       '<ul>',
         '<li><a href="http://rm.66rpg.com/?291206">返回空间</a></li>',
         '<li><a href="list.html">脚本列表</a></li>',
         '<li><a href="order.html">脚本定制</a></li>',
       '</ul>',
-    '</div>',
+    '</div>'
+  ].join(''))
+  $('#footer').html([
+    '<div>',
+      '<p>This page is designed by miaowm5(2016)</p>',
+      '<a href="http://www.pixiv.net/member_illust.php?mode=medium&illust_id=54202688" target="_blank">',
+        'Banner Picture: BEEK',
+      '</a>',
+    '</div>'
   ].join(''))
   siteGlobal.loadState += 1
 }
@@ -67,10 +67,22 @@ siteGlobal.checkLoad = function(targetState){
 }
 // setCommentBox
 siteGlobal.setCommentBox = function(){
-  $('.ds-thread').attr('data-thread-key', siteGlobal.articleID)
+  $('#comment').html([
+    '<div class="big-title">',
+      '<h1>发射言弹</h1>',
+      '<p class="title-hint">您的留言将被公开展示在这里。</p>',
+    '</div>',
+    '<div class="card">',
+      '<div class="ds-thread" data-thread-key="', siteGlobal.articleID, '"></div>',
+    '</div>'
+  ].join(''))
   var ds = document.createElement('script');
   ds.type = 'text/javascript';ds.async = true;
   ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
   ds.charset = 'UTF-8';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
 }
+// encode
+siteGlobal.encode=function(str){function base64encode(str){var base64EncodeChars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";var out,i,len;var c1,c2,c3;len=str.length;i=0;out="";while(i<len){c1=str.charCodeAt(i++)&255;if(i==len){out+=base64EncodeChars.charAt(c1>>2);out+=base64EncodeChars.charAt((c1&3)<<4);out+="==";break}c2=str.charCodeAt(i++);if(i==len){out+=base64EncodeChars.charAt(c1>>2);out+=base64EncodeChars.charAt(((c1&3)<<4)|((c2&240)>>4));out+=base64EncodeChars.charAt((c2&15)<<2);out+="=";break}c3=str.charCodeAt(i++);out+=base64EncodeChars.charAt(c1>>2);out+=base64EncodeChars.charAt(((c1&3)<<4)|((c2&240)>>4));out+=base64EncodeChars.charAt(((c2&15)<<2)|((c3&192)>>6));out+=base64EncodeChars.charAt(c3&63)}return out}function utf16to8(str){var out,i,len,c;out="";len=str.length;for(i=0;i<len;i++){c=str.charCodeAt(i);if((c>=1)&&(c<=127)){out+=str.charAt(i)}else{if(c>2047){out+=String.fromCharCode(224|((c>>12)&15));out+=String.fromCharCode(128|((c>>6)&63));out+=String.fromCharCode(128|((c>>0)&63))}else{out+=String.fromCharCode(192|((c>>6)&31));out+=String.fromCharCode(128|((c>>0)&63))}}}return out}return base64encode(utf16to8(str))};
+// decode
+siteGlobal.decode=function(str){function base64decode(str){var base64DecodeChars=new Array(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,62,-1,-1,-1,63,52,53,54,55,56,57,58,59,60,61,-1,-1,-1,-1,-1,-1,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-1,-1,-1,-1,-1,-1,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-1,-1,-1,-1,-1);var c1,c2,c3,c4;var i,len,out;len=str.length;i=0;out="";while(i<len){do{c1=base64DecodeChars[str.charCodeAt(i++)&255]}while(i<len&&c1==-1);if(c1==-1){break}do{c2=base64DecodeChars[str.charCodeAt(i++)&255]}while(i<len&&c2==-1);if(c2==-1){break}out+=String.fromCharCode((c1<<2)|((c2&48)>>4));do{c3=str.charCodeAt(i++)&255;if(c3==61){return out}c3=base64DecodeChars[c3]}while(i<len&&c3==-1);if(c3==-1){break}out+=String.fromCharCode(((c2&15)<<4)|((c3&60)>>2));do{c4=str.charCodeAt(i++)&255;if(c4==61){return out}c4=base64DecodeChars[c4]}while(i<len&&c4==-1);if(c4==-1){break}out+=String.fromCharCode(((c3&3)<<6)|c4)}return out}function utf8to16(str){var out,i,len,c;var char2,char3;out="";len=str.length;i=0;while(i<len){c=str.charCodeAt(i++);switch(c>>4){case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:out+=str.charAt(i-1);break;case 12:case 13:char2=str.charCodeAt(i++);out+=String.fromCharCode(((c&31)<<6)|(char2&63));break;case 14:char2=str.charCodeAt(i++);char3=str.charCodeAt(i++);out+=String.fromCharCode(((c&15)<<12)|((char2&63)<<6)|((char3&63)<<0));break}}return out}return utf8to16(base64decode(str))};

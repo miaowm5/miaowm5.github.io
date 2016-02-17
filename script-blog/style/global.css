@@ -57,8 +57,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 body{
   font-size: 14px;
   font-family: "方正兰亭黑","微软雅黑", Arial, Helvetica, "sans-serif";
-  margin: 3em;
-  margin-top: 1em;
+  margin: 0;
   background-color: #eee;
   background-image: url("../img/background.png");
   color: #333;
@@ -70,7 +69,7 @@ body{
   margin: auto;
   overflow: hidden;
 }
-#content>div{
+#content>.viewport>div{
   padding: 2em 3em 0em;
 }
 a>img{
@@ -79,6 +78,7 @@ a>img{
 }
 a>img:hover{ opacity: 1.0; }
 
+#content{ display: none; }
 #loading{
   text-align: center;
   height: 100vh;
@@ -132,38 +132,79 @@ a>img:hover{ opacity: 1.0; }
   background: #ddd;
 }
 
+.switch_button{
+  position: relative;
+  line-height: 5em;
+  cursor: pointer;
+  padding: 0 2em;
+  border-radius: 1em;
+  border: 1px solid #e0e0e0;
+}
+.switch_button:hover{
+  background-color: #fcfcfc;
+}
+.switch_button>div{
+  display: inline-block;
+}
+.switch_button .switch-back{
+  height: 2em;
+  width: 4em;
+  margin: 1.5em 0;
+  position: absolute;
+  border-radius: 2em;
+  box-shadow: 0px 1px 5px #9BB0D2 inset;
+  right: 2em;
+  transition: all 1s;
+}
+.switch_button .switch-object{
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  background: white;
+  box-shadow: 0px 0px 3px #7486A4;
+  right: 2em;
+  transition: all 0.3s;
+}
+.switch_button.open .switch-back{
+  box-shadow: 0px 1px 5px #6D8D30 inset;
+  background: #32c532;
+}
+.switch_button.open .switch-object{
+  right: 0;
+}
+
 .card-inline-title{
   border-bottom: 1px solid #ddd;
   color: #999;
   margin: 2em 0 1em;
 }
 .card-inline-title:first-child{ margin-top: 0; }
-a.normal-link{
+
+.normal-link{
   color: #7563EA;
   border-radius: 3px;
   padding: .2em .5em;
 }
-a.normal-link:hover{
+.normal-link:hover{
   color: white;
   background-color: #7563EA;
 }
 
 #header{
-  padding: 0em 1.5em;
   background-color: #091132;
   background-image: url(../img/header.jpg);
-  box-shadow: 0px 0px 50px black inset;
-  border-radius: 10px;
+  box-shadow: 0px -10px 50px black inset;
   background-size: cover;
-  background-position: center 10%;
+  background-position: center 20%;
   text-align: center;
 }
 /*no bgsizecover*/
 .no-bgsizecover #header{ background-size: 100%; }
 #header>div{
   color: white;
-  padding: 2em 1.5em 1em;
-  text-shadow: 0px 1px 6px black;
+  padding: 2em 1.5em 3em;
+  text-shadow: 0px 1px 10px black, 0px 0px 5px black;
 }
 #header h1{
   font-weight: bold;
@@ -173,10 +214,14 @@ a.normal-link:hover{
 #header ul li{ display: inline-block; }
 #header a{
   color: white;
-  padding: 0em 1em 1em;
+  padding: 1em 1.2em 1em;
   font-size: 0.9em;
 }
-#header a:hover{ border-bottom: 3px solid white; }
+#header a:hover{
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 3px solid white;
+}
 
 #footer{
   text-align: center;
@@ -190,23 +235,18 @@ a.normal-link:hover{
 }
 #footer a:hover{ color: #333; }
 
-@media screen and (max-width: 1050px) {
-  body{ margin: 0em; }
-  #header{
-    padding: 0em 0em;
-    border-radius: 0px;
-  }
-  .viewport{ max-width:2000px; }
-}
 @media screen and (max-width: 600px) {
   body{ font-size: 12px; }
   a>img{ transition: none; }
-  #content>div{ padding: 2em .5em 0em; }
+  #content>.viewport>div{ padding: 2em .5em 0em; }
   .toggle-button:hover{ background: #ddd; }
   .card{
     transition: none;
     padding: 2em 2em;
   }
+  .switch_button{ padding: 0 1.5em; }
+  .switch_button .switch-back{ right: 1.5em;}
+  .switch_button .switch-back, .switch_button .switch-object{ transition: none; }
   #header h1{ font-size: 1.5em; }
   #header>div{ padding: 2em .5em .5em; }
   #footer{ margin: 4em 0; }
