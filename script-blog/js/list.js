@@ -5,30 +5,6 @@
   function timeString(time){
     return [time.substr(0,4), time.substr(4,2) - 0, time.substr(6) - 0].join('.')
   }
-  function changeTo6R(){
-    $('#list').removeClass('github')
-    $('#list').addClass('rm6r')
-    $('#list .show_area li a').each(function(){
-      $(this).attr('href',
-        'http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=' +
-        $(this).attr('data-rm6r')
-      )
-    })
-  }
-  function changeToGithub(){
-    $('#list').removeClass('rm6r')
-    $('#list').addClass('github')
-    $('#list .show_area li a').each(function(){
-      if ($(this).hasClass('no-github')){
-        $(this).removeAttr('href')
-        return true
-      }
-      var url = 'script.html?github=' + $(this).attr('data-github')
-      url += '&rm6r=' + $(this).attr('data-rm6r')
-      if ($(this).hasClass('base-script')){ url += '&base=1' }
-      $(this).attr('href',url)
-    })
-  }
   function loadJson(){
     siteGlobal.showUpdate = true
     var mainFunction = function(data){
@@ -125,6 +101,27 @@
     })
   }
   function setting(setID, state){
+    var changeTo6R = function(){
+      $('#list').removeClass('github')
+      $('#list').addClass('rm6r')
+      $('#list .show_area li a').each(function(){
+        $(this).attr('href',
+          'http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=' +
+          $(this).attr('data-rm6r')
+        )
+      })
+    }
+    var changeToGithub = function(){
+      $('#list').removeClass('rm6r')
+      $('#list').addClass('github')
+      $('#list .show_area li').each(function(){
+        if ($(this).hasClass('no-github')){ return true }
+        var aDom = $(this).children('a')
+        var url = 'script.html?github=' + aDom.attr('data-github') + '&rm6r=' + aDom.attr('data-rm6r')
+        if ($(this).hasClass('base-script')){ url += '&base=1' }
+        aDom.attr('href',url)
+      })
+    }
     var dom = $('#setting .switch_button[data-setting='+ setID +']')
     if (typeof(state) == "undefined") { return }
     switch(setID){
@@ -142,8 +139,8 @@
   }
   function useSetting(){
     var saveSetting = function(setID, value){
-      if(value){ $.cookie("setting" + setID, '1') }
-      else{ $.cookie("setting" + setID, '0') }
+      if(value){ $.cookie("setting" + setID, '1', { expires: 365 }) }
+      else{ $.cookie("setting" + setID, '0', { expires: 365 }) }
     }
     $('#setting .switch_button').click(function(){
       var setID = $(this).attr('data-setting') - 0

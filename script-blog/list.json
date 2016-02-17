@@ -190,7 +190,7 @@ callback({
     { "name":"物品菜单简化","describe":"",
       "time":"20150322", "update_info":"提升兼容性，功能增强",
       "url":"12247", "github": 0  },
-    { "name":"隐藏物品/装备/技能","describe":"",
+    { "name":"隐藏物品装备技能","describe":"",
       "time":"20150131", "update_info":"调整代码，功能增强",
       "url":"11860", "base": true, "github": 0 },
     { "name":"物品排序","describe":"",
