@@ -65,7 +65,7 @@ body{
   line-height: 2.5;
 }
 .viewport{
-  max-width:1024px;
+  max-width:1200px;
   margin: auto;
   overflow: hidden;
 }

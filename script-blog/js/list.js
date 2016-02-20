@@ -24,7 +24,7 @@
       dataType: "jsonp",
       jsonp: "callback",
       jsonpCallback:"callback",
-      timeout: 2000,
+      timeout: 4000,
       success: mainFunction,
     }
     $.ajax(ajaxConfig).fail(function(p1,p2,p3){
@@ -100,66 +100,83 @@
       $(this).parent().find(".show_area").slideToggle()
     })
   }
-  function setting(setID, state){
-    var changeTo6R = function(){
-      $('#list').removeClass('github')
-      $('#list').addClass('rm6r')
-      $('#list .show_area li a').each(function(){
-        $(this).attr('href',
-          'http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=' +
-          $(this).attr('data-rm6r')
-        )
-      })
-    }
-    var changeToGithub = function(){
-      $('#list').removeClass('rm6r')
-      $('#list').addClass('github')
-      $('#list .show_area li').each(function(){
-        if ($(this).hasClass('no-github')){ return true }
-        var aDom = $(this).children('a')
-        var url = 'script.html?github=' + aDom.attr('data-github') + '&rm6r=' + aDom.attr('data-rm6r')
-        if ($(this).hasClass('base-script')){ url += '&base=1' }
-        aDom.attr('href',url)
-      })
-    }
+  function setting(setID, state, cookie){
     var dom = $('#setting .switch_button[data-setting='+ setID +']')
     if (typeof(state) == "undefined") { return }
     switch(setID){
     case 1:
-      if(state){ changeToGithub() }
-      else     { changeTo6R() }
+      if(state){ siteGlobal.setting.linkType = 1 }
+      else{ siteGlobal.setting.linkType = 0; setting(3, false) }
       break
     case 2:
       if(state){ $('#list').addClass('filter-base') }
       else     { $('#list').removeClass('filter-base') }
+      break
+    case 3:
+      if(state){ siteGlobal.setting.directGithub = true; setting(1, true) }
+      else { siteGlobal.setting.directGithub = false }
       break
     }
     if(state){ dom.addClass('open') }
     else     { dom.removeClass('open') }
   }
   function useSetting(){
+    siteGlobal.setting = {}
     var saveSetting = function(setID, value){
       if(value){ $.cookie("setting" + setID, '1', { expires: 365 }) }
       else{ $.cookie("setting" + setID, '0', { expires: 365 }) }
+    }
+    var refreshLink = function(){
+      var changeTo6R = function(){
+        $('#list').removeClass('github')
+        $('#list').addClass('rm6r')
+        $('#list .show_area li a').each(function(){
+          $(this).attr('href',
+            'http://rm.66rpg.com/home.php?mod=space&uid=291206&do=blog&id=' +
+            $(this).attr('data-rm6r')
+          )
+        })
+      }
+      var changeToGithub = function(){
+        $('#list').removeClass('rm6r')
+        $('#list').addClass('github')
+        $('#list .show_area li').each(function(){
+          if ($(this).hasClass('no-github')){ return true }
+          var aDom = $(this).children('a')
+          if (siteGlobal.setting.directGithub){
+            var url = 'https://github.com/miaowm5/RGSS3/blob/master/' +
+              siteGlobal.decode(aDom.attr('data-github'))
+          }
+          else{
+            var url = 'script.html?github=' + aDom.attr('data-github') + '&rm6r=' + aDom.attr('data-rm6r')
+            if ($(this).hasClass('base-script')){ url += '&base=1' }
+          }
+          aDom.attr('href',url)
+        })
+      }
+      if (siteGlobal.setting.linkType){ changeToGithub() }
+      else{ changeTo6R() }
     }
     $('#setting .switch_button').click(function(){
       var setID = $(this).attr('data-setting') - 0
       var value = !$(this).hasClass('open')
       setting(setID, value)
       saveSetting(setID, value)
+      refreshLink()
     })
+    var settingList = [1,2,3]
     if ( $.cookie("setting0") && ($.cookie("setting0") - 0) ){
-      $.each([1,2],function(_, id){
+      $.each(settingList,function(_, id){
         if (!$.cookie("setting" + id)){ return true }
-        setting(id, ($.cookie("setting" + id) - 0) )
+        setting(id, ($.cookie("setting" + id) - 0), true)
       })
       $('#setting .switch_button[data-setting=0]').addClass('open')
     }
     else{
-      $.each([1,2], function(_, id){ $.cookie("setting" + id, null) })
+      $.each(settingList, function(_, id){ $.cookie("setting" + id, null) })
       $("#setting .show_area").show()
-      setting(1, false)
     }
+    refreshLink()
   }
 
   loadJson()
