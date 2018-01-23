@@ -19,6 +19,12 @@ function set_change_pic(flag){
     )
   })
 }
+function set_hint_action(){
+  $(".content_area").click(function() {
+    $(this).children('.click:eq(0)').removeClass("click").addClass("click_over")
+    $(this).children('.wait_click:eq(0)').removeClass("wait_click").addClass("click")
+  })
+}
 
 function loadding(){
   add_frame('#main_area')
